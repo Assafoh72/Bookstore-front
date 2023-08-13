@@ -1,0 +1,18 @@
+
+<div class="external-container-content-hide">
+  <div (click)="onShowOrHideContent()">
+    <img src="../../../../assets/book sanple.jpg" alt="pictures">
+  </div>
+  <div [ngClass]="isDisplayNone? 'hero-card-content-hide' : 'hero-card-content-click' ">
+    <h2>{{ book.Title }}</h2>
+    <p>ID: {{ book.id }}</p>
+    <p>Publisher: {{ book.publisher }}</p>
+    <p>Date Published: {{ book.datePublished }}</p>
+    <p>Language: {{ book.language}}</p>
+    <p>Bestseller Rating: {{ book.bestsellerRating }}</p>
+    <p>Customer Rating: {{ book.CustomerRating }}</p>
+    <p>Number Of Pages: {{book.numberOfPages}}</p>
+    <p>Weight: {{book.weight}}</p>
+  </div>
+</div>
+<ng-content></ng-content>

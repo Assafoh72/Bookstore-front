@@ -1,0 +1,35 @@
+<div class="external-container">
+  <h1>Books List</h1>
+  <div class="hero-cards-container">
+    <div class="hero-card" *ngFor="let book of displayedBooks ; let i=index">
+
+
+
+      <app-book-card [book]="book">
+
+        <div class="button-container">
+          <button
+        class="add-to-my-Heroes"
+        *ngIf="true"
+         >Add {{book.Title}} to chart
+        </button>
+        </div>
+
+        <!-- <div class="message-hero-was-add"
+        *ngIf="hero.addedToMyHeroes"
+         >{{hero.name}} was added to your heroes
+        </div> -->
+      </app-book-card>
+
+
+    </div>
+  </div>
+  <div class="pagination">
+    <button class="btn-1" (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+    <div>{{currentPage}} \ {{totalPages}}</div>
+    <button class="btn-1" (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+
+</div>
+
+

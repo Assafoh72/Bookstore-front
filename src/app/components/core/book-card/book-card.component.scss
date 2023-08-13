@@ -1,0 +1,43 @@
+
+.external-container{
+  display: flex;
+  gap: 20px;
+}
+
+.external-container-content-hide{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+img{
+  width: 80px;
+  height: 140px;
+  padding: 6px;
+}
+
+.hero-card-content-hide{
+  display: none;
+}
+
+.hero-card-content-click{
+  background-color: #f0f0f0;
+  background: rgb(35 30 30 / 0%);
+}
+
+p {
+  font-size: 10px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 8px 0;
+
+}
+
+h2 {
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
