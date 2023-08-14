@@ -1,1 +1,32 @@
-<p>header works!</p>
+<div class="container">
+  <h1>BOOKSTORE PROJECT</h1>
+    <!-- <div *ngIf="isUserLogedIn && !isMyHeroesComponentOpen" class="external-button-container"> -->
+      <div *ngIf="true" class="external-button-container">
+
+      <button (click)="this.isMyHeroesComponentOpen=true" routerLink="/chart" class="custom-btn btn-1">
+        <span class="button-content">
+          go to chart</span>
+          </button>
+    </div>
+
+    <!-- <div *ngIf="isUserLogedIn && isMyHeroesComponentOpen" class="external-button-container"> -->
+      <div *ngIf="true" class="external-button-container">
+
+      <button (click)="this.isMyHeroesComponentOpen=false" routerLink="/books-list" class="custom-btn btn-1">
+        <span class="button-content">
+          Go to all Books
+        </span>
+      </button>
+    </div>
+
+    <!-- <div *ngIf="isUserLogedIn" class="external-button-container"> -->
+      <div *ngIf="true" class="external-button-container">
+
+      <button (click)="this.isUserLogedIn=false" routerLink="/log-in" class="custom-btn btn-1">
+        <span class="button-content">
+        Log-out
+        </span>
+      </button>
+    </div>
+  </div>
+

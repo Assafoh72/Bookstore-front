@@ -8,6 +8,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/shered/header/header.component';
 import { BookCardComponent } from './components/core/book-card/book-card.component';
 import { BooklistComponent } from './components/core/booklist/booklist.component';
+import {HttpClientModule} from '@angular/common/http';
+import { ChartComponent } from './components/core/chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,16 @@ import { BooklistComponent } from './components/core/booklist/booklist.component
     SignUpComponent,
     HeaderComponent,
     BookCardComponent,
-    BooklistComponent
+    BooklistComponent,
+    ChartComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

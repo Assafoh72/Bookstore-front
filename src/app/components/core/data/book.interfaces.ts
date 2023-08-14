@@ -9,5 +9,6 @@ export interface book {
   bestsellerRating: number;
   CustomerRating: number;
   numberOfPages: number;
-  weight: number
+  weight: number;
+  addedToChart: boolean;
 }

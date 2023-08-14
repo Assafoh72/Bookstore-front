@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/auth/login/login.component';
 import { SignUpComponent } from './components/auth/sign-up/sign-up.component';
 import { BooklistComponent } from './components/core/booklist/booklist.component';
+import { ChartComponent } from './components/core/chart/chart.component';
 
 const routes: Routes = [
   {path: 'log-in', component:  LoginComponent},
   {path: 'sign-up', component: SignUpComponent},
   {path: 'books-list', component: BooklistComponent},
+  {path: 'chart', component: ChartComponent},
 
 
   {path: '', redirectTo: 'log-in', pathMatch: 'full'},
