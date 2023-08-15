@@ -10,6 +10,7 @@ import { BookCardComponent } from './components/core/book-card/book-card.compone
 import { BooklistComponent } from './components/core/booklist/booklist.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ChartComponent } from './components/core/chart/chart.component';
+import { MyBooksComponent } from './components/core/my-books/my-books.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ChartComponent } from './components/core/chart/chart.component';
     HeaderComponent,
     BookCardComponent,
     BooklistComponent,
-    ChartComponent
+    ChartComponent,
+    MyBooksComponent
 
   ],
   imports: [

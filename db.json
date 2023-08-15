@@ -11,7 +11,8 @@
       "CustomerRating": 4.9,
       "numberOfPages": 320,
       "weight": 0.7,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "Harry Potter 3",
@@ -24,7 +25,8 @@
       "CustomerRating": 4.9,
       "numberOfPages": 320,
       "weight": 0.7,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "1984",
@@ -37,7 +39,8 @@
       "CustomerRating": 4.7,
       "numberOfPages": 328,
       "weight": 0.55,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "The Great Gatsby",
@@ -50,7 +53,8 @@
       "CustomerRating": 4.6,
       "numberOfPages": 180,
       "weight": 0.4,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "Pride and Prejudice",
@@ -63,7 +67,8 @@
       "CustomerRating": 4.5,
       "numberOfPages": 432,
       "weight": 0.65,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "Harry Potter and the Sorcerer's Stone",
@@ -76,7 +81,8 @@
       "CustomerRating": 4.9,
       "numberOfPages": 320,
       "weight": 0.7,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "To Kill a Mockingbird",
@@ -89,7 +95,8 @@
       "CustomerRating": 4.8,
       "numberOfPages": 336,
       "weight": 0.6,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "1984",
@@ -102,7 +109,8 @@
       "CustomerRating": 4.7,
       "numberOfPages": 328,
       "weight": 0.55,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "The Great Gatsby",
@@ -115,7 +123,8 @@
       "CustomerRating": 4.6,
       "numberOfPages": 180,
       "weight": 0.4,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "Pride and Prejudice",
@@ -128,7 +137,8 @@
       "CustomerRating": 4.5,
       "numberOfPages": 432,
       "weight": 0.65,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "Harry Potter and the Sorcerer's Stone",
@@ -141,7 +151,8 @@
       "CustomerRating": 4.9,
       "numberOfPages": 320,
       "weight": 0.7,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "To Kill a Mockingbird",
@@ -154,7 +165,8 @@
       "CustomerRating": 4.8,
       "numberOfPages": 336,
       "weight": 0.6,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "1984",
@@ -167,7 +179,8 @@
       "CustomerRating": 4.7,
       "numberOfPages": 328,
       "weight": 0.55,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "The Great Gatsby",
@@ -180,7 +193,8 @@
       "CustomerRating": 4.6,
       "numberOfPages": 180,
       "weight": 0.4,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "Pride and Prejudice",
@@ -193,7 +207,8 @@
       "CustomerRating": 4.5,
       "numberOfPages": 432,
       "weight": 0.65,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "Harry Potter and the Sorcerer's Stone",
@@ -206,7 +221,8 @@
       "CustomerRating": 4.9,
       "numberOfPages": 320,
       "weight": 0.7,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "To Kill a Mockingbird",
@@ -219,7 +235,8 @@
       "CustomerRating": 4.8,
       "numberOfPages": 336,
       "weight": 0.6,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "1984",
@@ -232,7 +249,8 @@
       "CustomerRating": 4.7,
       "numberOfPages": 328,
       "weight": 0.55,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "The Great Gatsby",
@@ -245,7 +263,8 @@
       "CustomerRating": 4.6,
       "numberOfPages": 180,
       "weight": 0.4,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "Pride and Prejudice",
@@ -258,7 +277,8 @@
       "CustomerRating": 4.5,
       "numberOfPages": 432,
       "weight": 0.65,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "Harry Potter and the Sorcerer's Stone",
@@ -271,7 +291,8 @@
       "CustomerRating": 4.9,
       "numberOfPages": 320,
       "weight": 0.7,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "To Kill a Mockingbird",
@@ -284,7 +305,8 @@
       "CustomerRating": 4.8,
       "numberOfPages": 336,
       "weight": 0.6,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "1984",
@@ -297,7 +319,8 @@
       "CustomerRating": 4.7,
       "numberOfPages": 328,
       "weight": 0.55,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "The Great Gatsby",
@@ -310,7 +333,8 @@
       "CustomerRating": 4.6,
       "numberOfPages": 180,
       "weight": 0.4,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "Pride and Prejudice",
@@ -323,7 +347,8 @@
       "CustomerRating": 4.5,
       "numberOfPages": 432,
       "weight": 0.65,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "Harry Potter and the Sorcerer's Stone",
@@ -336,7 +361,8 @@
       "CustomerRating": 4.9,
       "numberOfPages": 320,
       "weight": 0.7,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "To Kill a Mockingbird",
@@ -349,7 +375,8 @@
       "CustomerRating": 4.8,
       "numberOfPages": 336,
       "weight": 0.6,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "1984",
@@ -362,7 +389,8 @@
       "CustomerRating": 4.7,
       "numberOfPages": 328,
       "weight": 0.55,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "The Great Gatsby",
@@ -375,7 +403,8 @@
       "CustomerRating": 4.6,
       "numberOfPages": 180,
       "weight": 0.4,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "Pride and Prejudice",
@@ -388,7 +417,8 @@
       "CustomerRating": 4.5,
       "numberOfPages": 432,
       "weight": 0.65,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "Harry Potter and the Sorcerer's Stone",
@@ -401,7 +431,9 @@
       "CustomerRating": 4.9,
       "numberOfPages": 320,
       "weight": 0.7,
-      "addedToChart": false
+      "addedToChart": false,
+      "price": 100
     }
-  ]
+  ],
+  "users": []
 }

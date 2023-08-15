@@ -11,7 +11,6 @@ import { BookService } from '../service/book.service';
 export class BookCardComponent implements OnInit {
   constructor(private bookService: BookService){}
   ngOnInit(): void {
-    console.log(this.book);
   }
 
   @Input()book!: book;
@@ -33,7 +32,7 @@ export class BookCardComponent implements OnInit {
   //   localStorage.getItem
   // }
 
-  
+
 
 
 }

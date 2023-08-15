@@ -11,4 +11,5 @@ export interface book {
   numberOfPages: number;
   weight: number;
   addedToChart: boolean;
+  price: number;
 }
