@@ -1,0 +1,97 @@
+h1{
+  padding-left: 20px;
+  padding-top: 20px;
+  margin: 0;
+  font-size: 40px;
+}
+
+.external-container{
+ padding-bottom: 30px;
+ border-radius: 20px;
+ margin-top: 10px;
+
+ display: flex;
+ flex-direction: column;
+
+ background: rgb(131,58,180);
+ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(102,125,13,1) 36%, rgba(252,176,69,1) 100%);
+ background: rgb(2,0,36);
+ background: linear-gradient(305deg, rgb(81, 79, 122) 0%, rgba(89,237,228,1) 50%, rgba(0,212,255,1) 100%);
+ background: rgb(2,0,36);
+ background: linear-gradient(305deg, rgba(2,0,36,1) 0%, rgba(66,193,140,1) 50%, rgba(35,144,166,1) 100%);
+ background: linear-gradient(305deg, rgb(116 112 182) 0%, rgba(66,193,140,1) 50%, rgba(35,144,166,1) 100%);
+ min-height: 79vh;
+}
+
+a{
+ font-size: 20px;
+ text-decoration-line : none;
+ color: black;
+}
+
+.book-cards-container {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 25px;
+ justify-content: center;
+ align-items: center;
+ flex-grow: 1;
+}
+
+.book-card {
+ background-color: #f0f0f0;
+ background: rgb(35 30 30 / 50%);
+ border-radius: 8px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ padding: 16px;
+ width: 261px;
+ height: 214px;
+ box-shadow: 10px 8px 10px 5px rgb(77, 67, 49);
+}
+
+.add-to-chart{
+ background-color: rgb(83 138 164 / 35%);
+}
+
+.button-container{
+ display: flex;
+ justify-content: center;
+}
+
+.message-book-was-add{
+ color: #bedefa;
+ font-size: 13px
+}
+
+.pagination{
+ display: flex;
+ justify-content: center;
+ align-items: baseline;
+ gap: 5px;
+ margin-bottom: 20px;
+}
+
+.external-button-container{
+  display: flex;
+  justify-content: center;
+}
+
+.btn-1 {
+ font-family: cursive;
+ background: rgb(48, 56, 160);
+ background: linear-gradient(0deg, rgb(95, 103, 211) 0%, rgba(12,25,180,1) 100%);
+ border: none;
+ border-radius: 20px;
+ padding: 10px;
+ color: #f5e1e1;
+ margin-top: 22px;
+}
+
+.btn-1:hover {
+ background: rgb(0,3,255);
+ background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
+}
+
+.btn-1:disabled{
+ background: #33404b;
+}

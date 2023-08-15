@@ -1,0 +1,76 @@
+<div class="external-container">
+  <div class="login-box">
+    <h2>payment</h2>
+    <form [formGroup]="form" (ngSubmit)="handleSubmit()">
+
+      <div class="user-box">
+        <label for="name">
+          Name:
+        </label>
+        <input id="name" type="text" class="form-control" formControlName="name" autocomplete="off">
+
+        <div *ngIf= "!isInputValid(form,'name')" class="error-message">
+          Please enter a valid name
+        </div>
+
+      </div>
+
+
+
+      <div class="user-box two-user-box">
+        <div>
+          <label for="Credit">
+            Credit card number:
+          </label>
+          <input id="Credit" type="tel"  class="form-control" formControlName="credit" autocomplete="off">
+          <div *ngIf= "!isInputValid(form,'credit')" class="error-message">
+            Please enter a valid Credit card number
+          </div>
+        </div>
+        <div>
+          <label for="date">
+            Expiry Date:
+          </label>
+          <input id="date" type="date"  class="form-control" formControlName="date" autocomplete="off">
+
+          <div *ngIf= "!isInputValid(form,'date')" class="error-message">
+            Please enter a valid date
+          </div>
+        </div>
+
+
+
+      </div>
+
+
+
+
+
+      <div class="user-box">
+        <label for="id">
+          Id
+        </label>
+        <input id="id" type="password" class="form-control" formControlName="id" autocomplete="off">
+        <div *ngIf= "!isInputValid(form, 'id')" class="error-message">
+          Please enter a valid date
+        </div>
+      </div>
+
+
+
+      <button href="#" type="submit" [disabled]="!form.valid">
+        <!-- <span></span>
+        <span></span>
+        <span></span>
+        <span></span> -->
+        Submit
+      </button>
+
+
+
+    </form>
+
+
+  </div>
+
+  </div>

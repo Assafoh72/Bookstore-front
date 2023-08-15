@@ -11,6 +11,7 @@ import { BooklistComponent } from './components/core/booklist/booklist.component
 import {HttpClientModule} from '@angular/common/http';
 import { ChartComponent } from './components/core/chart/chart.component';
 import { MyBooksComponent } from './components/core/my-books/my-books.component';
+import { PaymentComponent } from './components/core/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MyBooksComponent } from './components/core/my-books/my-books.component'
     BookCardComponent,
     BooklistComponent,
     ChartComponent,
-    MyBooksComponent
+    MyBooksComponent,
+    PaymentComponent
 
   ],
   imports: [

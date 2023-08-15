@@ -1,1 +1,37 @@
-<p>my-books works!</p>
+<div class="external-container">
+  <h1>Your books</h1>
+  <div class="book-cards-container">
+    <div class="book-card" *ngFor="let book of displayedBooks ; let i=index">
+
+
+
+      <app-book-card [book]="book">
+
+        <div class="button-container">
+          <button
+        class="add-to-chart"
+        *ngIf="book.addedToChart"
+         >Remove {{book.Title}} from chart
+        </button>
+        </div>
+
+        <!-- <div class="message-book-was-add"
+        *ngIf="book.addedToChart"
+         >{{book.Title}} was added to your heroes
+        </div> -->
+      </app-book-card>
+
+
+    </div>
+  </div>
+  <div class="pagination">
+    <button class="btn-1" (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+    <div>{{currentPage}} \ {{totalPages}}</div>
+    <button class="btn-1" (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+
+  
+
+</div>
+
+
