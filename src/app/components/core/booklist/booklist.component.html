@@ -11,14 +11,18 @@
           <button
         class="add-to-chart"
         (click)="onAddToChart(book, +book.id)"
-        *ngIf="!book.addedToChart"
+        *ngIf="!book.addedToChart && !book.addedToMyBook"
          >Add {{book.Title}} to chart
         </button>
         </div>
 
         <div class="message-book-was-add"
         *ngIf="book.addedToChart"
-         >{{book.Title}} was added to your heroes
+         >{{book.Title}} was added to cart
+        </div>
+        <div class="message-book-was-add"
+        *ngIf="book.addedToMyBook"
+         >{{book.Title}} was added to your books
         </div>
       </app-book-card>
 

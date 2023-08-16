@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { book } from '../data/book.interfaces';
+import { BookService } from '../service/book.service';
+import { Subscription } from 'rxjs';
+
 
 @Component({
   selector: 'app-my-books',
@@ -7,23 +10,33 @@ import { book } from '../data/book.interfaces';
   styleUrls: ['./my-books.component.scss']
 })
 export class MyBooksComponent implements OnInit {
+  constructor (private bookService: BookService) {}
   ngOnInit(): void {
+    this.bookService.getMyBook();
+    this.myBookSub = this.bookService.myBook.subscribe((val)=>{
+        this.myBook = val;
+        this.updatePage()
+        console.log('myBook: ' ,this.myBook);
+      })
 
   }
 
-  MyBook: book[] = [];
+  myBook: book[] = [];
+  myBookSub!:Subscription
+
   displayedBooks: book[] = [];
   itemsPerPage: number = 6;
   currentPage: number = 1;
-  totalPages: number = Math.max((Math.ceil(this.MyBook.length/6)),1);
+  totalPages: number = Math.max((Math.ceil(this.myBook.length/6)),1);
 
+  
 
 
   updatePage() {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;
-    this.displayedBooks = this.MyBook.slice(startIndex, endIndex);
-    this.totalPages =  Math.max((Math.ceil(this.MyBook.length/6)),1);
+    this.displayedBooks = this.myBook.slice(startIndex, endIndex);
+    this.totalPages =  Math.max((Math.ceil(this.myBook.length/6)),1);
   }
 
   // updatePage() {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { BookService } from '../service/book.service';
 
 @Component({
   selector: 'app-payment',
@@ -9,7 +10,8 @@ import { Router } from '@angular/router';
 })
 export class PaymentComponent implements OnInit {
   form!: FormGroup;
-  constructor(private router: Router) {}
+  // const totalPrice: number =
+  constructor(private router: Router, private bookService: BookService) {}
   ngOnInit(): void {
     this.form = new FormGroup ({
       name: new FormControl ('', Validators.required ),
@@ -23,6 +25,7 @@ export class PaymentComponent implements OnInit {
     // const name = this.form.value.name
     // const Credit = this.form.value.email
     // const password = this.form.value.password
+    this.bookService.onRemoveAllCartBooks()
     this.router.navigate(['/my-books']);
   }
 

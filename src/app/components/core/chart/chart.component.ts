@@ -20,17 +20,9 @@ export class ChartComponent implements OnInit{
       this.bookChartSub = this.bookService.chartBook.subscribe((val)=>{
         this.bookChart = val;
         this.updatePage()
+        console.log('bookChart: ' ,this.bookChart);
+
       })
-      // this.bookService.getChartBook().pipe(first()).subscribe((books) => {
-      //   this.bookChart = books;
-
-      //   this.updatePage()
-      // })
-
-      // this.bookService.getCharItemToDisplay().pipe(first()).subscribe((books) => {
-      //   this.bookChart = books;
-      //   this.updatePage()
-      // })
 
     }
     // private ChartBoSubscription!: Subscription;
@@ -55,6 +47,7 @@ export class ChartComponent implements OnInit{
     this.bookService.updateBookChart(this.bookChart)
     this.updatePage() // אחרי שאני מסיר ספר אז הוא עדיין נמצא בגלל שהמערך החלקי שמוצג לא מתעדכן
   }
+
 
   updatePage() {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;

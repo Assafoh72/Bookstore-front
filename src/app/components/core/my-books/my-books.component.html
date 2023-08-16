@@ -10,17 +10,11 @@
         <div class="button-container">
           <button
         class="add-to-chart"
-        *ngIf="book.addedToChart"
-         >Remove {{book.Title}} from chart
+        *ngIf="book.addedToMyBook"
+         >Remove {{book.Title}} from my book
         </button>
         </div>
-
-        <!-- <div class="message-book-was-add"
-        *ngIf="book.addedToChart"
-         >{{book.Title}} was added to your heroes
-        </div> -->
       </app-book-card>
-
 
     </div>
   </div>
@@ -30,7 +24,7 @@
     <button class="btn-1" (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
   </div>
 
-  
+
 
 </div>
 
