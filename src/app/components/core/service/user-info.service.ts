@@ -8,6 +8,12 @@ import { BehaviorSubject, Observable } from "rxjs";
 export class UserInfoService {
   private userInfo: { email: string; password: string; name: string } | null = null;
 
+  private userAdmin: {email: string; password: string;}  = {email: "assafoh72@gmail.com", password: "Aa!1123456"};
+
+  getUserAdminInfo(): {email: string, password: string} | null {
+    return this.userAdmin
+  }
+
   storeUserInfo(email: string, password: string, name: string): void {
     this.userInfo = { email, password, name };
   }
@@ -19,6 +25,14 @@ export class UserInfoService {
   private isUserLogedIn: boolean = false;
 
   private isUserLogedInForGuard: boolean = false;
+  private isUserAdmin: boolean = true
+
+  getIsUserAdmin() {
+    return this.isUserAdmin;
+  }
+  updateIsUserAdmin(isAdmin: boolean) {
+    this.isUserAdmin = isAdmin;
+  }
 
 
   private isUserLogedInSubject = new BehaviorSubject<boolean>(false)

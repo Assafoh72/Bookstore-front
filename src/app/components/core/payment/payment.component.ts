@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BookService } from '../service/book.service';
+import { ModalService } from '../service/modal.service';
 
 @Component({
   selector: 'app-payment',
@@ -10,8 +11,10 @@ import { BookService } from '../service/book.service';
 })
 export class PaymentComponent implements OnInit {
   form!: FormGroup;
-  // const totalPrice: number =
-  constructor(private router: Router, private bookService: BookService) {}
+  constructor(
+    private router: Router,
+    private bookService: BookService,
+    private modalServise: ModalService) {}
   ngOnInit(): void {
     this.form = new FormGroup ({
       name: new FormControl ('', Validators.required ),
@@ -25,8 +28,10 @@ export class PaymentComponent implements OnInit {
     // const name = this.form.value.name
     // const Credit = this.form.value.email
     // const password = this.form.value.password
-    this.bookService.onRemoveAllCartBooks()
-    this.router.navigate(['/my-books']);
+    this.bookService.onRemoveAllCartBooks();
+    this.modalServise.updateIsModalToDisplay(true);
+
+    // this.router.navigate(['/books-list']);
   }
 
   isInputValid(form:FormGroup, input: string): boolean{

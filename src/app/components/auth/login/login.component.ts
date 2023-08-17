@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit{
     if (this.isEmailAndPasswordValid()){
       this.userInfoService.updateIsUserLogedIn(true)
       this.userInfoService.updateIsMyHeroesComponentOpen(false)
-      this.router.navigate(['/app-heroes-list']);
+      this.router.navigate(['/books-list']);
     }
     else {
       this.displayErrorMessageEmailOrPassword = true
@@ -33,13 +33,28 @@ export class LoginComponent implements OnInit{
   isEmailAndPasswordValid(): boolean{
     const email = this.form.value.email
     const password = this.form.value.password
-    const userInfo = this.userInfoService.getUserInfo()
-    return email === userInfo?.email && password === userInfo?.password
+
+    const userAdminInfo = this.userInfoService.getUserAdminInfo()
+    if (email === userAdminInfo?.email && password === userAdminInfo?.password){
+      this.userInfoService.updateIsUserAdmin(true);
+      return true
+    }
+    else{
+      const userInfo = this.userInfoService.getUserInfo()
+      return email === userInfo?.email && password === userInfo?.password
+    }
+
+    // const userInfo = this.userInfoService.getUserInfo()
+    // return email === userInfo?.email && password === userInfo?.password
   }
   isEmailValid(form:FormGroup): boolean{
     return !(!form.get('email')?.valid && form.get('email')?.touched)
   }
 
   displayErrorMessageEmailOrPassword = false
+
+  // isAdminUser(): boolean{
+
+  // }
 
 }

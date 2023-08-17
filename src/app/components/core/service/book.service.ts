@@ -10,13 +10,12 @@ export class BookService {
   private _chartBook = new BehaviorSubject<book[]>([])
   chartBook = this._chartBook.asObservable()
 
-  private _myBook = new BehaviorSubject<book[]>([])
-  myBook = this._myBook.asObservable()
-
   constructor(private httpClient: HttpClient) { }
 
 
+
     getBooksList() {
+      console.log("in function getBooksList()");
       return this.httpClient.get<book[]>('http://localhost:3000/books')
     }
 
@@ -39,24 +38,10 @@ export class BookService {
       });
     }
 
-    getMyBook(){
-      return this.httpClient.get<book[]>('http://localhost:3000/books', {
-        params: {
-          addedToMyBook: 'true'
-        }
-      }).subscribe((res)=>{
-        this._myBook.next(res)
-      });
-
-    }
 
     updateAddedToMyBook(id: number, status: boolean) {
       const addres:string = 'http://localhost:3000/books/' + id;
       this.httpClient.patch(addres, {addedToMyBook: status}).subscribe((el)=>console.log('this os the response', el));
-    }
-
-    updateMyBook (updatedBooks:book[]){
-      this._myBook.next(updatedBooks)
     }
 
     onRemoveAllCartBooks() {
@@ -65,31 +50,38 @@ export class BookService {
           if (book.addedToChart === true) {
             const address: string = 'http://localhost:3000/books/' + book.id;
 
-            // Update the book's properties
             this.httpClient.patch(address, { addedToChart: false }).subscribe((response) => {
               console.log('Response from addedToChart update:', response);
             });
 
-            this.httpClient.patch(address, { addedToMyBook: true }).subscribe((response) => {
-              console.log('Response from addedToMyBook update:', response);
-            });
           }
         }
-        this.updateMyBook(allBooks);
+        // this.getBooksList()
       });
+        // this.getBooksList()
 
     }
 
+    onDeleteBook(id: number) {
+      const address: string = 'http://localhost:3000/books/' + id;
 
-// onRemoveAllCartBooks(idOfChartBook: number[]){
-//   const allBook = this.httpClient.get<book[]>('http://localhost:3000/books')
-//   for(let number of allBook){
-//     const addres:string = 'http://localhost:3000/books/' + number;
-//     this.httpClient.patch(addres, {addedToChart: false}).subscribe((el)=>console.log('this os the response', el));
-//     this.httpClient.patch(addres, {addedToMyBook: true}).subscribe((el)=>console.log('this os the response', el));
+      // Send a DELETE request to remove the book with the specified id
+      this.httpClient.delete(address).subscribe(
+          () => {
+              console.log('Book deleted successfully');
+              // You can perform any additional actions after successful deletion
+          },
+          (error) => {
+              console.error('Error deleting book:', error);
+              // Handle the error if deletion fails
+          }
+      );
+  }
 
-//   }
-// }
+  onUpdatePrice(id: number, newPrice: number) {
+    const addres:string = 'http://localhost:3000/books/' + id;
+    this.httpClient.patch(addres, {newPrice: newPrice}).subscribe((el)=>console.log('this os the response', el));
+  }
 
 
 

@@ -1,7 +1,18 @@
 <div class="external-container">
   <h1>Books List</h1>
   <div class="book-cards-container">
+
+    <div class="button-container">
+      <button
+    class="add-to-chart"
+    *ngIf="isUserAdmin"
+     >Add new book
+    </button>
+    </div>
+
     <div class="book-card" *ngFor="let book of displayedBooks ; let i=index">
+
+
 
 
 
@@ -10,20 +21,41 @@
         <div class="button-container">
           <button
         class="add-to-chart"
+        *ngIf="isUserAdmin"
+        (click)="onUpdatePrice(+book.id,+priceInput.value)"
+         >Update {{book.Title}} price
+        </button>
+        <input class="input-price" type="number" #priceInput>
+        </div>
+
+        <div class="button-container">
+          <button
+        class="add-to-chart"
+        *ngIf="isUserAdmin"
+        (click)="onDeleteBook(+book.id)"
+         >Delete {{book.Title}}
+        </button>
+        </div>
+
+
+
+        <div class="button-container">
+          <button
+        class="add-to-chart"
         (click)="onAddToChart(book, +book.id)"
-        *ngIf="!book.addedToChart && !book.addedToMyBook"
+        *ngIf="!book.addedToChart && !isUserAdmin"
          >Add {{book.Title}} to chart
         </button>
         </div>
 
         <div class="message-book-was-add"
-        *ngIf="book.addedToChart"
+        *ngIf="book.addedToChart && !isUserAdmin"
          >{{book.Title}} was added to cart
         </div>
-        <div class="message-book-was-add"
+        <!-- <div class="message-book-was-add"
         *ngIf="book.addedToMyBook"
          >{{book.Title}} was added to your books
-        </div>
+        </div> -->
       </app-book-card>
 
 

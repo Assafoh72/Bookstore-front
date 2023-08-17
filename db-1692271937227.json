@@ -1,7 +1,7 @@
 {
   "books": [
     {
-      "Title": "Harry Potter 2",
+      "Title": "1",
       "id": "0",
       "category": "Fantasy",
       "publisher": "Scholastic",
@@ -13,25 +13,25 @@
       "weight": 0.7,
       "addedToChart": false,
       "price": 100,
-      "addedToMyBook": false
+      "newPrice": 200
     },
     {
-      "Title": "Harry Potter 3",
+      "Title": "2",
       "id": "1",
-      "category": "Fantasy",
-      "publisher": "Scholastic",
-      "datePublished": "1997-06-26T00:00:00.000Z",
+      "category": "Fiction",
+      "publisher": "HarperCollins",
+      "datePublished": "1960-07-11T00:00:00.000Z",
       "language": "English",
-      "bestsellerRating": 4.7,
-      "CustomerRating": 4.9,
-      "numberOfPages": 320,
-      "weight": 0.7,
+      "bestsellerRating": 4.5,
+      "CustomerRating": 4.8,
+      "numberOfPages": 336,
+      "weight": 0.6,
       "addedToChart": false,
       "price": 100,
-      "addedToMyBook": false
+      "newPrice": 200
     },
     {
-      "Title": "1984",
+      "Title": "3",
       "id": "2",
       "category": "Fiction",
       "publisher": "Secker & Warburg",
@@ -43,10 +43,10 @@
       "weight": 0.55,
       "addedToChart": false,
       "price": 100,
-      "addedToMyBook": false
+      "newPrice": 100
     },
     {
-      "Title": "The Great Gatsby",
+      "Title": "4",
       "id": "3",
       "category": "Fiction",
       "publisher": "Charles Scribner's Sons",
@@ -58,10 +58,10 @@
       "weight": 0.4,
       "addedToChart": false,
       "price": 100,
-      "addedToMyBook": false
+      "newPrice": 100
     },
     {
-      "Title": "Pride and Prejudice",
+      "Title": "5",
       "id": "4",
       "category": "Fiction",
       "publisher": "T. Egerton, Whitehall",
@@ -73,10 +73,10 @@
       "weight": 0.65,
       "addedToChart": false,
       "price": 100,
-      "addedToMyBook": false
+      "newPrice": 100
     },
     {
-      "Title": "Harry Potter and the Sorcerer's Stone",
+      "Title": "6",
       "id": "5",
       "category": "Fantasy",
       "publisher": "Scholastic",
@@ -86,12 +86,12 @@
       "CustomerRating": 4.9,
       "numberOfPages": 320,
       "weight": 0.7,
-      "addedToChart": true,
+      "addedToChart": false,
       "price": 100,
-      "addedToMyBook": false
+      "newPrice": 200
     },
     {
-      "Title": "To Kill a Mockingbird",
+      "Title": "7",
       "id": "6",
       "category": "Fiction",
       "publisher": "HarperCollins",
@@ -103,10 +103,10 @@
       "weight": 0.6,
       "addedToChart": false,
       "price": 100,
-      "addedToMyBook": false
+      "newPrice": 200
     },
     {
-      "Title": "1984",
+      "Title": "8",
       "id": "7",
       "category": "Fiction",
       "publisher": "Secker & Warburg",
@@ -118,10 +118,10 @@
       "weight": 0.55,
       "addedToChart": false,
       "price": 100,
-      "addedToMyBook": false
+      "newPrice": 100
     },
     {
-      "Title": "The Great Gatsby",
+      "Title": "9",
       "id": "8",
       "category": "Fiction",
       "publisher": "Charles Scribner's Sons",
@@ -133,10 +133,10 @@
       "weight": 0.4,
       "addedToChart": false,
       "price": 100,
-      "addedToMyBook": false
+      "newPrice": 100
     },
     {
-      "Title": "Pride and Prejudice",
+      "Title": "10",
       "id": "9",
       "category": "Fiction",
       "publisher": "T. Egerton, Whitehall",
@@ -148,7 +148,7 @@
       "weight": 0.65,
       "addedToChart": false,
       "price": 100,
-      "addedToMyBook": false
+      "newPrice": 100
     }
   ]
 }

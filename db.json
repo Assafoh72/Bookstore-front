@@ -13,22 +13,22 @@
       "weight": 0.7,
       "addedToChart": false,
       "price": 100,
-      "addedToMyBook": true
+      "newPrice": 1000
     },
     {
       "Title": "2",
       "id": "1",
-      "category": "Fantasy",
-      "publisher": "Scholastic",
-      "datePublished": "1997-06-26T00:00:00.000Z",
+      "category": "Fiction",
+      "publisher": "HarperCollins",
+      "datePublished": "1960-07-11T00:00:00.000Z",
       "language": "English",
-      "bestsellerRating": 4.7,
-      "CustomerRating": 4.9,
-      "numberOfPages": 320,
-      "weight": 0.7,
+      "bestsellerRating": 4.5,
+      "CustomerRating": 4.8,
+      "numberOfPages": 336,
+      "weight": 0.6,
       "addedToChart": false,
       "price": 100,
-      "addedToMyBook": true
+      "newPrice": 200
     },
     {
       "Title": "3",
@@ -43,7 +43,7 @@
       "weight": 0.55,
       "addedToChart": false,
       "price": 100,
-      "addedToMyBook": true
+      "newPrice": 200
     },
     {
       "Title": "4",
@@ -58,7 +58,7 @@
       "weight": 0.4,
       "addedToChart": false,
       "price": 100,
-      "addedToMyBook": true
+      "newPrice": 100
     },
     {
       "Title": "5",
@@ -73,7 +73,7 @@
       "weight": 0.65,
       "addedToChart": false,
       "price": 100,
-      "addedToMyBook": true
+      "newPrice": 100
     },
     {
       "Title": "6",
@@ -88,7 +88,7 @@
       "weight": 0.7,
       "addedToChart": false,
       "price": 100,
-      "addedToMyBook": false
+      "newPrice": 200
     },
     {
       "Title": "7",
@@ -103,7 +103,7 @@
       "weight": 0.6,
       "addedToChart": false,
       "price": 100,
-      "addedToMyBook": false
+      "newPrice": 200
     },
     {
       "Title": "8",
@@ -118,7 +118,7 @@
       "weight": 0.55,
       "addedToChart": false,
       "price": 100,
-      "addedToMyBook": false
+      "newPrice": 100
     },
     {
       "Title": "9",
@@ -133,7 +133,7 @@
       "weight": 0.4,
       "addedToChart": false,
       "price": 100,
-      "addedToMyBook": false
+      "newPrice": 100
     },
     {
       "Title": "10",
@@ -148,7 +148,7 @@
       "weight": 0.65,
       "addedToChart": false,
       "price": 100,
-      "addedToMyBook": true
+      "newPrice": 100
     }
   ]
 }
