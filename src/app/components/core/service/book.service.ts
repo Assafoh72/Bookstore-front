@@ -103,6 +103,11 @@ export class BookService {
     this.httpClient.patch(addres, {newPrice: newPrice}).subscribe((el)=>console.log('this os the response', el));
   }
 
+  onUpdateTitle(id: number, newTitle: string) {
+    const addres:string = 'http://localhost:3000/books/' + id;
+    this.httpClient.patch(addres, {Title: newTitle}).subscribe((el)=>console.log('this os the response', el));
+  }
+
 
 
 

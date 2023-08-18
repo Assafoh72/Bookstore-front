@@ -83,23 +83,33 @@ this.bookService.getBooksList().pipe(first()).subscribe((books) => {
  }
 
  onUpdatePrice(id: number,newPrice: number){
-
   this.bookService.onUpdatePrice(id, newPrice)
   this.bookList[id].newPrice = newPrice;
-
-
-
 //
   this.bookService.getBooksList().pipe(first()).subscribe((books) => {
     this.bookList = books;
     this.updatePage()
   })
 //
-
-
  }
 
+ onUpdateTitle(id: number,newTitle: string){
+  this.bookService.onUpdateTitle(id, newTitle)
+  this.bookList[id].Title = newTitle;
+//
+  this.bookService.getBooksList().pipe(first()).subscribe((books) => {
+    this.bookList = books;
+    this.updatePage()
+  })
+//
+ }
+
+
+
+
+
+
  onAddNewBook(){
-  
+
  }
 }

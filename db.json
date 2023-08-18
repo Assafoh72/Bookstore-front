@@ -13,7 +13,7 @@
       "weight": 0.7,
       "addedToChart": false,
       "price": 100,
-      "newPrice": 200
+      "newPrice": 1
     },
     {
       "Title": "2",
@@ -103,7 +103,7 @@
       "weight": 0.6,
       "addedToChart": false,
       "price": 100,
-      "newPrice": 200
+      "newPrice": 22222222222
     },
     {
       "Title": "8",
@@ -136,7 +136,7 @@
       "newPrice": 11111
     },
     {
-      "Title": "10",
+      "Title": "aaaaa",
       "id": "9",
       "category": "Fiction",
       "publisher": "T. Egerton, Whitehall",
@@ -148,7 +148,7 @@
       "weight": 0.65,
       "addedToChart": false,
       "price": 100,
-      "newPrice": 111
+      "newPrice": 0
     },
     {
       "Title": "aaa",
