@@ -13,7 +13,7 @@
       "weight": 0.7,
       "addedToChart": false,
       "price": 100,
-      "newPrice": 1000
+      "newPrice": 200
     },
     {
       "Title": "2",
@@ -43,7 +43,7 @@
       "weight": 0.55,
       "addedToChart": false,
       "price": 100,
-      "newPrice": 200
+      "newPrice": 100
     },
     {
       "Title": "4",
@@ -118,7 +118,7 @@
       "weight": 0.55,
       "addedToChart": false,
       "price": 100,
-      "newPrice": 100
+      "newPrice": 1111
     },
     {
       "Title": "9",
@@ -133,7 +133,7 @@
       "weight": 0.4,
       "addedToChart": false,
       "price": 100,
-      "newPrice": 100
+      "newPrice": 11111
     },
     {
       "Title": "10",
@@ -148,7 +148,22 @@
       "weight": 0.65,
       "addedToChart": false,
       "price": 100,
-      "newPrice": 100
+      "newPrice": 111
+    },
+    {
+      "Title": "aaa",
+      "id": "15",
+      "category": "1",
+      "publisher": "1",
+      "datePublished": "0001-01-01",
+      "language": "1",
+      "bestsellerRating": 1,
+      "CustomerRating": 1,
+      "numberOfPages": 1,
+      "weight": 1,
+      "addedToChart": false,
+      "price": 1,
+      "newPrice": 111111
     }
   ]
 }

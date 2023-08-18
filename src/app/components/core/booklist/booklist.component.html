@@ -3,9 +3,11 @@
   <div class="book-cards-container">
 
     <div class="button-container">
+
       <button
     class="add-to-chart"
     *ngIf="isUserAdmin"
+    routerLink="/add-book"
      >Add new book
     </button>
     </div>
@@ -18,14 +20,14 @@
 
       <app-book-card [book]="book">
 
-        <div class="button-container">
+        <div *ngIf="isUserAdmin" class="button-container">
           <button
         class="add-to-chart"
         *ngIf="isUserAdmin"
         (click)="onUpdatePrice(+book.id,+priceInput.value)"
          >Update {{book.Title}} price
         </button>
-        <input class="input-price" type="number" #priceInput>
+        <input  class="input-price" type="number" #priceInput>
         </div>
 
         <div class="button-container">

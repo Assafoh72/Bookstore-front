@@ -18,10 +18,6 @@ export class BooklistComponent implements OnInit{
 
 
   ngOnInit(): void {
-    // this.books = this.bookService.getHeroesList();
-    // this.saveToLocalStorage();
-    // this.updatePage()
-
     this.bookService.getBooksList().pipe(first()).subscribe((books) => {
       this.bookList = books;
       this.updatePage()
@@ -29,32 +25,18 @@ export class BooklistComponent implements OnInit{
 
   }
 
-   newPriceInput = ""
-
-
-
   displayedBooks: book[] = [];
 
-  //  books: book[]=[];
    isDisplayNone: boolean = true
    userName = this.userInfoService.getUserInfo()?.name;
 
-  // saveToLocalStorage(): void {
-  //   const heroesJson: string = JSON.stringify(this.books);
-  //   localStorage.setItem('heroes', heroesJson);
-  // }
-
-  // geLocalStorage(): void {
-  //   localStorage.getItem
-  // }
 
   onAddToChart(book: book, index: number): void {
     this.bookList[index].addedToChart = true
     this.bookService.updateAddedToChart(index, true);
-    // this.bookService.addHeroToMyHeroes(hero);
-    // this.modalService.updateIsModalDisplayed(true, 'Hero was added')
-    // this.saveToLocalStorage()
+
   }
+
 
   private bookList: book[] =[];
 
@@ -87,11 +69,37 @@ export class BooklistComponent implements OnInit{
 
  onDeleteBook(id: number){
   this.bookService.onDeleteBook(id)
+  this.bookList.splice(id,1);
+
+
+//
+this.bookService.getBooksList().pipe(first()).subscribe((books) => {
+  this.bookList = books;
+  this.updatePage()
+})
+//
+
 
  }
 
  onUpdatePrice(id: number,newPrice: number){
-  
+
   this.bookService.onUpdatePrice(id, newPrice)
+  this.bookList[id].newPrice = newPrice;
+
+
+
+//
+  this.bookService.getBooksList().pipe(first()).subscribe((books) => {
+    this.bookList = books;
+    this.updatePage()
+  })
+//
+
+
+ }
+
+ onAddNewBook(){
+  
  }
 }

@@ -43,9 +43,9 @@ export class ChartComponent implements OnInit{
     if (bookWithSpecificId) {
       bookWithSpecificId.addedToChart = false;
     }
-    // this.bookChart[indexInBookChart].addedToChart = false
-    this.bookService.updateBookChart(this.bookChart)
-    this.updatePage() // אחרי שאני מסיר ספר אז הוא עדיין נמצא בגלל שהמערך החלקי שמוצג לא מתעדכן
+  this.bookService.updateBookChart(this.bookChart);
+  this.bookService.getChartBook()
+  this.updatePage()
   }
 
 
@@ -55,13 +55,6 @@ export class ChartComponent implements OnInit{
     this.displayedBooks = this.bookChart.slice(startIndex, endIndex);
     this.totalPages =  Math.max((Math.ceil(this.bookChart.length/6)),1);
   }
-
-  // updatePage() {
-  //   const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-  //   const endIndex = startIndex + this.itemsPerPage;
-  //   this.displayedBooks = this.bookChart.slice(startIndex, endIndex);
-  //   this.totalPages =  Math.max((Math.ceil(this.bookChart.length/6)),1);
-  // }
 
   nextPage() {
     this.currentPage++;

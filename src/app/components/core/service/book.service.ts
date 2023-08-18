@@ -10,6 +10,9 @@ export class BookService {
   private _chartBook = new BehaviorSubject<book[]>([])
   chartBook = this._chartBook.asObservable()
 
+
+
+
   constructor(private httpClient: HttpClient) { }
 
 
@@ -58,30 +61,49 @@ export class BookService {
         }
         // this.getBooksList()
       });
-        // this.getBooksList()
+
+        // this.getBooksList()///////////
+
 
     }
 
-    onDeleteBook(id: number) {
+  onDeleteBook(id: number) {
       const address: string = 'http://localhost:3000/books/' + id;
-
-      // Send a DELETE request to remove the book with the specified id
       this.httpClient.delete(address).subscribe(
           () => {
               console.log('Book deleted successfully');
-              // You can perform any additional actions after successful deletion
           },
           (error) => {
               console.error('Error deleting book:', error);
-              // Handle the error if deletion fails
           }
       );
   }
+
+  onAddBook(newBook: book) {
+    const address: string = 'http://localhost:3000/books/';
+    this.httpClient.post('http://localhost:3000/books/', newBook).subscribe(
+        () => {
+            console.log('Book Add successfully');
+        },
+        (error) => {
+            console.error('Error Adding book:', error);
+        }
+    );
+}
+
+
+
+
+
+
+
 
   onUpdatePrice(id: number, newPrice: number) {
     const addres:string = 'http://localhost:3000/books/' + id;
     this.httpClient.patch(addres, {newPrice: newPrice}).subscribe((el)=>console.log('this os the response', el));
   }
+
+
 
 
 

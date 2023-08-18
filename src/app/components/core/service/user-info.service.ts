@@ -25,7 +25,7 @@ export class UserInfoService {
   private isUserLogedIn: boolean = false;
 
   private isUserLogedInForGuard: boolean = false;
-  private isUserAdmin: boolean = true
+  private isUserAdmin: boolean = true;
 
   getIsUserAdmin() {
     return this.isUserAdmin;

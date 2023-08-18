@@ -12,6 +12,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { ChartComponent } from './components/core/chart/chart.component';
 import { PaymentComponent } from './components/core/payment/payment.component';
 import { ModalComponent } from './components/pages/modal/modal.component';
+import { AddBookComponent } from './components/core/add-book/add-book.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ModalComponent } from './components/pages/modal/modal.component';
     BooklistComponent,
     ChartComponent,
     PaymentComponent,
-    ModalComponent
+    ModalComponent,
+    AddBookComponent
 
   ],
   imports: [

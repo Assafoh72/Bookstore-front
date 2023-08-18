@@ -1,0 +1,98 @@
+<div class="external-container">
+  <div class="login-box">
+    <h2>Add a new book</h2>
+    <form [formGroup]="form" (ngSubmit)="handleSubmit()">
+
+      <div class="user-box">
+        <input id="title" type="text" class="form-control" formControlName="title" autocomplete="on">
+        <label for="title">
+          Title:
+        </label>
+      </div>
+
+      <div class="user-box">
+        <input id="category" type="text"  class="form-control" formControlName="category" autocomplete="on">
+          <label for="category">
+            category:
+          </label>
+      </div>
+
+      <div class="user-box">
+        <input id="publisher" type="text"  class="form-control" formControlName="publisher" autocomplete="on">
+          <label for="publisher">
+            publisher:
+          </label>
+      </div>
+
+
+      <div class="user-box">
+        <input id="datePublished" type="date" class="form-control" formControlName="datePublished" autocomplete="on">
+        <label for="datePublished">
+          datePublished:
+        </label>
+      </div>
+
+      <div class="user-box">
+        <input id="language" type="text" class="form-control" formControlName="language" autocomplete="on">
+        <label for="language">
+          language:
+        </label>
+      </div>
+
+      <div class="user-box">
+        <input id="bestsellerRating" type="number"  class="form-control" formControlName="bestsellerRating" autocomplete="on">
+          <label for="bestsellerRating">
+            bestsellerRating:
+          </label>
+      </div>
+
+      <div class="user-box">
+        <input id="CustomerRating" type="number" class="form-control" formControlName="CustomerRating" autocomplete="on">
+        <label for="password">
+          CustomerRating:
+        </label>
+      </div>
+
+      <div class="user-box">
+        <input id="numberOfPages" type="number" class="form-control" formControlName="numberOfPages" autocomplete="on">
+        <label for="name">
+          numberOfPages:
+        </label>
+      </div>
+
+      <div class="user-box">
+        <input id="weight" type="number"  class="form-control" formControlName="weight" autocomplete="on">
+          <label for="weight">
+            weight:
+          </label>
+      </div>
+
+      <div class="user-box">
+        <input id="price" type="number" class="form-control" formControlName="price" autocomplete="on">
+        <label for="price">
+          price:
+        </label>
+      </div>
+      <div class="error-message" *ngIf="this.IsErrorDisplay">Please fill in all the details of the new book</div>
+
+
+
+      <button href="#" type="submit" [disabled]="!form.valid">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Submit
+      </button>
+
+
+
+    </form>
+    <br>
+    <a routerLink="/books-list">Go back to books list</a>
+
+  </div>
+
+  </div>
+
+
