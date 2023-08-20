@@ -8,7 +8,7 @@ import { BehaviorSubject, Observable } from "rxjs";
 export class UserInfoService {
   private userInfo: { email: string; password: string; name: string } | null = null;
 
-  private userAdmin: {email: string; password: string;}  = {email: "assafoh72@gmail.com", password: "Aa!1123456"};
+  private userAdmin: {email: string; password: string;} = {email: "assafoh72@gmail.com", password: "Aa!1123456"};
 
   getUserAdminInfo(): {email: string, password: string} | null {
     return this.userAdmin
@@ -25,7 +25,7 @@ export class UserInfoService {
   private isUserLogedIn: boolean = false;
 
   private isUserLogedInForGuard: boolean = false;
-  private isUserAdmin: boolean = true;
+  private isUserAdmin: boolean = false;
 
   getIsUserAdmin() {
     return this.isUserAdmin;
@@ -65,4 +65,5 @@ export class UserInfoService {
   getIsMyHeroesComponentOpen() {
     return this.isMyHeroesComponentOpen
   }
+
 }

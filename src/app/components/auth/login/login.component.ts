@@ -37,6 +37,8 @@ export class LoginComponent implements OnInit{
     const userAdminInfo = this.userInfoService.getUserAdminInfo()
     if (email === userAdminInfo?.email && password === userAdminInfo?.password){
       this.userInfoService.updateIsUserAdmin(true);
+      console.log("assaffff");
+
       return true
     }
     else{

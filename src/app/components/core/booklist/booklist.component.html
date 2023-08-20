@@ -1,8 +1,65 @@
 <div class="external-container">
   <h1>Books List</h1>
+
+  <div class="button-container"  *ngIf="isUserAdmin">
+    <div class="discount-container">
+      <p>Set discount: {{this.discount*100}}%</p>
+
+      <button
+    class="add-to-chart"
+    *ngIf="isUserAdmin"
+    (click)="setDiscount(0.05)"
+     >5%
+    </button>
+
+    <button
+    class="add-to-chart"
+    *ngIf="isUserAdmin"
+    (click)="setDiscount(0.1)"
+     >10%
+    </button>
+
+    <button
+    class="add-to-chart"
+    *ngIf="isUserAdmin"
+    (click)="setDiscount(0.15)"
+     >15%
+    </button>
+
+    <button
+    class="add-to-chart"
+    *ngIf="isUserAdmin"
+    (click)="setDiscount(0.2)"
+     >20%
+    </button>
+    </div>
+
+
+
+    <button
+  class="add-to-chart"
+  *ngIf="isUserAdmin"
+  routerLink="/add-book"
+   >Add new book
+  </button>
+  </div>
+
+
   <div class="book-cards-container">
 
-    <div class="button-container">
+
+    <!-- <div class="button-container">
+      <p>Set discount</p>
+      <div class="discount-container">
+        <button
+      class="add-to-chart"
+      *ngIf="isUserAdmin"
+      routerLink="/add-book"
+       >Add new book
+      </button>
+      </div>
+
+
 
       <button
     class="add-to-chart"
@@ -10,14 +67,9 @@
     routerLink="/add-book"
      >Add new book
     </button>
-    </div>
+    </div> -->
 
     <div class="book-card" *ngFor="let book of displayedBooks ; let i=index">
-
-
-
-
-
       <app-book-card [book]="book">
 
         <div *ngIf="isUserAdmin" class="button-container">

@@ -95,3 +95,14 @@ a{
 .btn-1:disabled{
  background: #33404b;
 }
+
+.price-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+}
+
+.red{
+  color: red;
+}

@@ -91,12 +91,17 @@ export class BookService {
     );
 }
 
+  totalPrice!: number;
+  priceAfterDiscount!: number;
+  discountPercentage: number = 0;
 
+  getDiscountPercentage(){
+    return this.discountPercentage;
+  }
 
-
-
-
-
+  setDiscountPercentage(percentage: number){
+    this.discountPercentage = percentage;
+  }
 
   onUpdatePrice(id: number, newPrice: number) {
     const addres:string = 'http://localhost:3000/books/' + id;
@@ -107,10 +112,6 @@ export class BookService {
     const addres:string = 'http://localhost:3000/books/' + id;
     this.httpClient.patch(addres, {Title: newTitle}).subscribe((el)=>console.log('this os the response', el));
   }
-
-
-
-
 
 }
 

@@ -27,6 +27,8 @@ export class BooklistComponent implements OnInit{
 
   displayedBooks: book[] = [];
 
+  discount: number = 0;
+
    isDisplayNone: boolean = true
    userName = this.userInfoService.getUserInfo()?.name;
 
@@ -103,6 +105,13 @@ this.bookService.getBooksList().pipe(first()).subscribe((books) => {
   })
 //
  }
+
+ setDiscount(discount: number){
+  this.bookService.setDiscountPercentage(discount)
+  this.discount = discount
+ }
+
+
 
 
 

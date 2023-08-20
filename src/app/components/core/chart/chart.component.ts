@@ -24,12 +24,21 @@ export class ChartComponent implements OnInit{
 
       })
 
+      this.calculateTotalPrice()
+      this.calculateTotalPriceAfterDiscount()
+
+
+
     }
     // private ChartBoSubscription!: Subscription;
 
     bookChart: book[] = [];
     bookChartSub!:Subscription
     displayedBooks: book[] = [];
+
+    totalPrice: number =0;
+    priceAfterDiscount: number = 0;
+    discount: number = 0;
 
  // pegination
   itemsPerPage: number = 6
@@ -66,6 +75,18 @@ export class ChartComponent implements OnInit{
     this.updatePage();
   }
   //pegination
+
+  calculateTotalPrice(){
+    for(let book of this.bookChart){
+      this.totalPrice += +book.price
+    }
+  }
+
+  calculateTotalPriceAfterDiscount(){
+    this.priceAfterDiscount = +(1-this.bookService.getDiscountPercentage())*(this.totalPrice);
+    this.discount = +(this.totalPrice - this.priceAfterDiscount);
+
+   }
 
 
 

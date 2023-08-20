@@ -23,6 +23,10 @@ export class PaymentComponent implements OnInit {
       date: new FormControl ('', Validators.required)
     });
 
+
+
+
+
   }
   handleSubmit(): void {
     // const name = this.form.value.name
@@ -37,4 +41,6 @@ export class PaymentComponent implements OnInit {
   isInputValid(form:FormGroup, input: string): boolean{
     return !(!form.get(input)?.valid && form.get(input)?.touched)
   }
+
+ 
 }

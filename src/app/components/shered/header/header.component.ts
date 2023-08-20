@@ -16,6 +16,10 @@ export class HeaderComponent implements OnInit{
   constructor(private userInfoService: UserInfoService) {}
   public isUserLogedIn!: boolean
   public  isMyHeroesComponentOpen!: boolean
+  onLogOut(){
+    this.userInfoService.updateIsUserAdmin(false);
+    this.isUserLogedIn=false;
+  }
 
   // public  isUserLogedIn$!: Observable <boolean> // for async pipe
 
