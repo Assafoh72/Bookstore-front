@@ -26,7 +26,7 @@
       "CustomerRating": 4.8,
       "numberOfPages": 336,
       "weight": 0.6,
-      "addedToChart": true,
+      "addedToChart": false,
       "price": 100,
       "newPrice": 200
     },
@@ -41,7 +41,7 @@
       "CustomerRating": 4.7,
       "numberOfPages": 328,
       "weight": 0.55,
-      "addedToChart": true,
+      "addedToChart": false,
       "price": 100,
       "newPrice": 100
     },

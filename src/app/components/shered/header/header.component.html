@@ -1,5 +1,8 @@
 <div class="container">
   <h1>BOOKSTORE PROJECT</h1>
+  <p *ngIf="isUserLogedIn">Hi admin/user</p>
+  <p *ngIf="!isUserLogedIn">Hello Guest </p>
+
 
   <!-- <div *ngIf="true" class="external-button-container">
 
@@ -14,7 +17,9 @@
 
       <button (click)="this.isMyHeroesComponentOpen=true" routerLink="/chart" class="custom-btn btn-1">
         <span class="button-content">
-          go to chart</span>
+          <img class="cart-img" src="../../../../assets/cart.png" alt="">
+          8
+        </span>
           </button>
     </div>
 
@@ -29,11 +34,19 @@
     </div>
 
     <!-- <div *ngIf="isUserLogedIn" class="external-button-container"> -->
-      <div *ngIf="true" class="external-button-container">
+      <div  *ngIf="isUserLogedIn" class="external-button-container">
 
       <button (click)="onLogOut()" routerLink="/log-in" class="custom-btn btn-1">
         <span class="button-content">
         Log-out
+        </span>
+      </button>
+    </div>
+
+    <div  *ngIf="!isUserLogedIn" class="external-button-container">
+      <button routerLink="/log-in" class="custom-btn btn-1">
+        <span class="button-content">
+        Log-in
         </span>
       </button>
     </div>

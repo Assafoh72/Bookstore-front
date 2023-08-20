@@ -6,6 +6,7 @@ import { BooklistComponent } from './components/core/booklist/booklist.component
 import { ChartComponent } from './components/core/chart/chart.component';
 import { PaymentComponent } from './components/core/payment/payment.component';
 import { AddBookComponent } from './components/core/add-book/add-book.component';
+import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {path: 'log-in', component:  LoginComponent},
@@ -16,7 +17,7 @@ const routes: Routes = [
   {path: 'add-book', component: AddBookComponent},
 
   {path: '', redirectTo: 'log-in', pathMatch: 'full'},
-  // {path: '**', component: PageNotFoundComponent, pathMatch: 'full' }
+  {path: '**', component: PageNotFoundComponent, pathMatch: 'full' }
 ];
 
 @NgModule({

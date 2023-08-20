@@ -13,6 +13,7 @@ import { ChartComponent } from './components/core/chart/chart.component';
 import { PaymentComponent } from './components/core/payment/payment.component';
 import { ModalComponent } from './components/pages/modal/modal.component';
 import { AddBookComponent } from './components/core/add-book/add-book.component';
+import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AddBookComponent } from './components/core/add-book/add-book.component'
     ChartComponent,
     PaymentComponent,
     ModalComponent,
-    AddBookComponent
+    AddBookComponent,
+    PageNotFoundComponent
 
   ],
   imports: [

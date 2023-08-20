@@ -22,7 +22,26 @@ export class UserInfoService {
     return this.userInfo;
   }
 
+
+
+
+
+
   private isUserLogedIn: boolean = false;
+
+  // private isUserLogedInSubject = new BehaviorSubject<boolean>(false)
+  // isUserLogedIn$: Observable<boolean> = this.isUserLogedInSubject.asObservable();
+
+
+
+
+
+
+
+
+
+
+
 
   private isUserLogedInForGuard: boolean = false;
   private isUserAdmin: boolean = false;

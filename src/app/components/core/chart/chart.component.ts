@@ -20,12 +20,16 @@ export class ChartComponent implements OnInit{
       this.bookChartSub = this.bookService.chartBook.subscribe((val)=>{
         this.bookChart = val;
         this.updatePage()
+        this.totalPrice = 0;
+        this.priceAfterDiscount=0;
+        this.calculateTotalPrice()
+        this.calculateTotalPriceAfterDiscount()
         console.log('bookChart: ' ,this.bookChart);
 
       })
 
-      this.calculateTotalPrice()
-      this.calculateTotalPriceAfterDiscount()
+      // this.calculateTotalPrice()
+      // this.calculateTotalPriceAfterDiscount()
 
 
 
