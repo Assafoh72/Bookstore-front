@@ -1,5 +1,6 @@
 <div class="external-container">
   <h1>Your Chart</h1>
+  <p *ngIf="this.isUserLogedIn">user is loged in</p>
   <div class="book-cards-container">
     <div class="book-card" *ngFor="let book of displayedBooks ; let i=index">
 

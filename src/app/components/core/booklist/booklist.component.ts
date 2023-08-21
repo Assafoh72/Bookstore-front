@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { first, take } from 'rxjs';
+import { Subscription, first, take } from 'rxjs';
 import { book } from 'src/app/components/core/data/book.interfaces';
 import { BookService } from 'src/app/components/core/service/book.service';
 import { UserInfoService } from 'src/app/components/core/service/user-info.service';
@@ -17,10 +17,19 @@ export class BooklistComponent implements OnInit{
   ){}
 
 
+  private isUserAdminSubscription!: Subscription;
+  public isUserAdmin!: boolean;
+
+
   ngOnInit(): void {
     this.bookService.getBooksList().pipe(first()).subscribe((books) => {
       this.bookList = books;
       this.updatePage()
+    })
+
+
+    this.isUserAdminSubscription = this.userInfoService.isUserAdmin$.subscribe (isUserAdmin=>{
+      this.isUserAdmin =isUserAdmin;
     })
 
   }
@@ -36,6 +45,7 @@ export class BooklistComponent implements OnInit{
   onAddToChart(book: book, index: number): void {
     this.bookList[index].addedToChart = true
     this.bookService.updateAddedToChart(index, true);
+    this.bookService.getChartBook() //////   הוספתי כשי שכשאני מוסיף ספר זה יעדכן את המספר ספרים שמוצד בהאדר בעגלה
 
   }
 
@@ -66,7 +76,7 @@ export class BooklistComponent implements OnInit{
   }
   //pegination
 
- isUserAdmin: boolean = this.userInfoService.getIsUserAdmin()
+//  isUserAdmin: boolean = this.userInfoService.getIsUserAdmin()
 
 
  onDeleteBook(id: number){
@@ -86,7 +96,7 @@ this.bookService.getBooksList().pipe(first()).subscribe((books) => {
 
  onUpdatePrice(id: number,newPrice: number){
   this.bookService.onUpdatePrice(id, newPrice)
-  this.bookList[id].newPrice = newPrice;
+  this.bookList[id].price = newPrice;
 //
   this.bookService.getBooksList().pipe(first()).subscribe((books) => {
     this.bookList = books;

@@ -95,7 +95,6 @@ export class AddBookComponent implements OnInit {
       weight: weight,
       addedToChart: false,
       price: price,
-      newPrice: price,
     }
 
     // this.bookService.getBooksList().pipe(first()).subscribe((books) => {

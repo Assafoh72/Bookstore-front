@@ -12,6 +12,5 @@ export interface book {
   weight: number;
   addedToChart: boolean;
   price: number;
-  newPrice: number;
 }
 

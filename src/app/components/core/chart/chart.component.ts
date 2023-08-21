@@ -24,8 +24,16 @@ export class ChartComponent implements OnInit{
         this.priceAfterDiscount=0;
         this.calculateTotalPrice()
         this.calculateTotalPriceAfterDiscount()
-        console.log('bookChart: ' ,this.bookChart);
+        this.countBookCart = val.length
 
+      })
+
+
+
+
+      this.isUserLogedInSubscription = this.userInfoService.isUserLogedIn$.subscribe (isUserLogedIn =>{
+        this.isUserLogedIn = isUserLogedIn;
+        this.userInfoService.getIsUserLogedIn();
       })
 
       // this.calculateTotalPrice()
@@ -36,9 +44,16 @@ export class ChartComponent implements OnInit{
     }
     // private ChartBoSubscription!: Subscription;
 
+    private isUserLogedInSubscription!: Subscription;
+    public isUserLogedIn!: boolean;
+
+
     bookChart: book[] = [];
     bookChartSub!:Subscription
     displayedBooks: book[] = [];
+
+    countBookCart = this.bookChart.length
+
 
     totalPrice: number =0;
     priceAfterDiscount: number = 0;
@@ -87,11 +102,20 @@ export class ChartComponent implements OnInit{
   }
 
   calculateTotalPriceAfterDiscount(){
+
     this.priceAfterDiscount = +(1-this.bookService.getDiscountPercentage())*(this.totalPrice);
     this.discount = +(this.totalPrice - this.priceAfterDiscount);
+    if(!this.isUserLogedIn){
+      console.log('is User loged in '+ this.isUserLogedIn);
 
+      this.priceAfterDiscount = this.totalPrice;
+      this.discount = 0;
+    }
    }
 
-
-
+  ngOnDestroy(){
+    this.isUserLogedInSubscription.unsubscribe();
+  }
 }
+
+

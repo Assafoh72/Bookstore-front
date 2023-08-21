@@ -1,7 +1,8 @@
 <div class="container">
   <h1>BOOKSTORE PROJECT</h1>
-  <p *ngIf="isUserLogedIn">Hi admin/user</p>
-  <p *ngIf="!isUserLogedIn">Hello Guest </p>
+  <p *ngIf="isUserLogedIn && !isUserAdmin">Hi User</p>
+  <p *ngIf="!isUserLogedIn">Hi Guest </p>
+  <p *ngIf="isUserAdmin">Hi Admin</p>
 
 
   <!-- <div *ngIf="true" class="external-button-container">
@@ -13,18 +14,18 @@
   </div> -->
 
     <!-- <div *ngIf="isUserLogedIn && !isMyHeroesComponentOpen" class="external-button-container"> -->
-      <div *ngIf="true" class="external-button-container">
+      <div *ngIf="!isUserAdmin" class="external-button-container">
 
       <button (click)="this.isMyHeroesComponentOpen=true" routerLink="/chart" class="custom-btn btn-1">
         <span class="button-content">
           <img class="cart-img" src="../../../../assets/cart.png" alt="">
-          8
+          {{CountBookCart}}
         </span>
           </button>
     </div>
 
     <!-- <div *ngIf="isUserLogedIn && isMyHeroesComponentOpen" class="external-button-container"> -->
-      <div *ngIf="true" class="external-button-container">
+      <div *ngIf="!isUserAdmin" class="external-button-container">
 
       <button (click)="this.isMyHeroesComponentOpen=false" routerLink="/books-list" class="custom-btn btn-1">
         <span class="button-content">
