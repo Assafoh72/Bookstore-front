@@ -1,6 +1,15 @@
 <div class="external-container">
   <h1>Books List</h1>
 
+  <div>
+    <p>Serch book</p>
+    <input type="text" #keyword>
+    <button
+    routerLink="/serch"
+    (click)="onSerchBook(keyword.value)"
+    >Serch</button>
+  </div>
+
   <div class="button-container"  *ngIf="isUserAdmin">
     <div class="discount-container">
       <p>Set discount: {{this.discount*100}}%</p>

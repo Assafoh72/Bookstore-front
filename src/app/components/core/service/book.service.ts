@@ -10,6 +10,15 @@ export class BookService {
   private _chartBook = new BehaviorSubject<book[]>([])
   chartBook = this._chartBook.asObservable()
 
+  private keyword: string = "";
+  
+  updateKeyword(newKeyword: string){
+    this.keyword = newKeyword;
+  }
+  getKeyword(){
+    return this.keyword
+  }
+
 
 
 
@@ -40,6 +49,19 @@ export class BookService {
         this._chartBook.next(res)
       });
     }
+
+    // getSerchBook() {
+    //   return this.httpClient.get<book[]>('http://localhost:3000/books', {
+    //     params: {
+    //       addedToChart: 'true'
+    //     }
+    //   }).subscribe((res)=>{
+    //     this._chartBook.next(res)
+    //   });
+    // }
+
+
+
 
 
     updateAddedToMyBook(id: number, status: boolean) {
@@ -112,6 +134,8 @@ export class BookService {
     const addres:string = 'http://localhost:3000/books/' + id;
     this.httpClient.patch(addres, {Title: newTitle}).subscribe((el)=>console.log('this os the response', el));
   }
+
+
 
 }
 

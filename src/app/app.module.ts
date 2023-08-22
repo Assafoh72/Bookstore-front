@@ -14,6 +14,7 @@ import { PaymentComponent } from './components/core/payment/payment.component';
 import { ModalComponent } from './components/pages/modal/modal.component';
 import { AddBookComponent } from './components/core/add-book/add-book.component';
 import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
+import { SerchComponent } from './components/core/serch/serch.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PageNotFoundComponent } from './components/pages/page-not-found/page-no
     PaymentComponent,
     ModalComponent,
     AddBookComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SerchComponent
 
   ],
   imports: [

@@ -1,36 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription, first, take } from 'rxjs';
-import { book } from 'src/app/components/core/data/book.interfaces';
-import { BookService } from 'src/app/components/core/service/book.service';
-import { UserInfoService } from 'src/app/components/core/service/user-info.service';
-
+import { BookService } from '../service/book.service';
+import { UserInfoService } from '../service/user-info.service';
+import { first } from 'rxjs';
+import { book } from '../data/book.interfaces';
 
 @Component({
-  selector: 'app-booklist',
-  templateUrl: './booklist.component.html',
-  styleUrls: ['./booklist.component.scss']
+  selector: 'app-serch',
+  templateUrl: './serch.component.html',
+  styleUrls: ['./serch.component.scss']
 })
-export class BooklistComponent implements OnInit{
+export class SerchComponent implements OnInit {
+
   constructor(
     private bookService: BookService,
     private userInfoService: UserInfoService,
   ){}
 
 
-  private isUserAdminSubscription!: Subscription;
   public isUserAdmin!: boolean;
-
+  keyword!: string
 
   ngOnInit(): void {
     this.bookService.getBooksList().pipe(first()).subscribe((books) => {
       this.bookList = books;
+      this.keyword = this.bookService.getKeyword()
+      this.filterBooksByTitleKeyword(this.keyword)
       this.updatePage()
     })
 
 
-    this.isUserAdminSubscription = this.userInfoService.isUserAdmin$.subscribe (isUserAdmin=>{
-      this.isUserAdmin =isUserAdmin;
-    })
 
   }
 
@@ -125,11 +123,16 @@ this.bookService.getBooksList().pipe(first()).subscribe((books) => {
   this.discount = discount
  }
 
- onSerchBook(keyword: string){
-  this.bookService.updateKeyword(keyword)
- }
+filterBooksByTitleKeyword(keyword: string){
+  const filteredBooks: book[] = [];
+
+  for (const book of this.bookList) {
+    if (book.Title.includes(keyword)) {
+      filteredBooks.push(book);
+    }
+  }
+  this.bookList = filteredBooks;
+}
 
 
-
- }
-
+}

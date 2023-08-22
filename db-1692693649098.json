@@ -11,7 +11,7 @@
       "CustomerRating": 4.9,
       "numberOfPages": 320,
       "weight": 0.7,
-      "addedToChart": false,
+      "addedToChart": true,
       "price": 80,
       "newPrice": 4
     },
@@ -26,7 +26,7 @@
       "CustomerRating": 4.9,
       "numberOfPages": 320,
       "weight": 0.7,
-      "addedToChart": false,
+      "addedToChart": true,
       "price": 70,
       "newPrice": 4
     },
@@ -41,7 +41,7 @@
       "CustomerRating": 4.9,
       "numberOfPages": 320,
       "weight": 0.7,
-      "addedToChart": false,
+      "addedToChart": true,
       "price": 130,
       "newPrice": 4
     },
@@ -56,7 +56,7 @@
       "CustomerRating": 4.9,
       "numberOfPages": 320,
       "weight": 0.7,
-      "addedToChart": false,
+      "addedToChart": true,
       "price": 170,
       "newPrice": 4
     },
@@ -71,7 +71,7 @@
       "CustomerRating": 4.9,
       "numberOfPages": 320,
       "weight": 0.7,
-      "addedToChart": false,
+      "addedToChart": true,
       "price": 110,
       "newPrice": 4
     },
@@ -86,7 +86,7 @@
       "CustomerRating": 4.9,
       "numberOfPages": 320,
       "weight": 0.7,
-      "addedToChart": false,
+      "addedToChart": true,
       "price": 60,
       "newPrice": 4
     },
@@ -101,7 +101,7 @@
       "CustomerRating": 4.9,
       "numberOfPages": 320,
       "weight": 0.7,
-      "addedToChart": false,
+      "addedToChart": true,
       "price": 100,
       "newPrice": 4
     },
