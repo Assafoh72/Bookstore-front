@@ -18,6 +18,7 @@ export class BookCardComponent implements OnInit {
   @Input()myHeroesSubscription!: book[];
 
   isDisplayNone: boolean = true
+  rundomNumber: number = 2;
 
   onShowOrHideContent(): void{
     this.isDisplayNone = !this.isDisplayNone
@@ -31,6 +32,11 @@ export class BookCardComponent implements OnInit {
   // geLocalStorage(): void {
   //   localStorage.getItem
   // }
+
+  getRandomNumber() {
+    return Math.floor(Math.random() * 7) + 1;
+  }
+
 
 
 

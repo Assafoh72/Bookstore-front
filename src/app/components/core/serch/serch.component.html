@@ -11,7 +11,7 @@
       <app-book-card [book]="book">
 
 
-<!--
+        <!--
         <div class="button-container">
           <button
         class="add-to-chart"
@@ -36,16 +36,24 @@
         *ngIf="book.addedToChart && !isUserAdmin"
          >{{book.Title}} was added to cart
         </div>
-        
+
       </app-book-card>
 
 
+
     </div>
+
+
   </div>
+
   <div class="pagination">
+
     <button class="btn-1" (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
     <div>{{currentPage}} \ {{totalPages}}</div>
     <button class="btn-1" (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+  <div>
+    <button class="btn-1" routerLink="/books-list">Return to all result</button>
   </div>
 
 </div>

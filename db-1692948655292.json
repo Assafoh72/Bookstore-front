@@ -11,9 +11,8 @@
       "CustomerRating": 4.9,
       "numberOfPages": 320,
       "weight": 0.7,
-      "addedToChart": true,
-      "price": 80,
-      "newPrice": 4
+      "addedToChart": false,
+      "price": 130
     },
     {
       "Title": "2",
@@ -26,9 +25,8 @@
       "CustomerRating": 4.9,
       "numberOfPages": 320,
       "weight": 0.7,
-      "addedToChart": true,
-      "price": 70,
-      "newPrice": 4
+      "addedToChart": false,
+      "price": 130
     },
     {
       "Title": "3",
@@ -41,39 +39,8 @@
       "CustomerRating": 4.9,
       "numberOfPages": 320,
       "weight": 0.7,
-      "addedToChart": true,
-      "price": 130,
-      "newPrice": 4
-    },
-    {
-      "Title": "4",
-      "id": "3",
-      "category": "Fantasy",
-      "publisher": "Scholastic",
-      "datePublished": "1997-06-26T00:00:00.000Z",
-      "language": "English",
-      "bestsellerRating": 4.7,
-      "CustomerRating": 4.9,
-      "numberOfPages": 320,
-      "weight": 0.7,
-      "addedToChart": true,
-      "price": 170,
-      "newPrice": 4
-    },
-    {
-      "Title": "5",
-      "id": "4",
-      "category": "Fantasy",
-      "publisher": "Scholastic",
-      "datePublished": "1997-06-26T00:00:00.000Z",
-      "language": "English",
-      "bestsellerRating": 4.7,
-      "CustomerRating": 4.9,
-      "numberOfPages": 320,
-      "weight": 0.7,
-      "addedToChart": true,
-      "price": 110,
-      "newPrice": 4
+      "addedToChart": false,
+      "price": 130
     },
     {
       "Title": "6",
@@ -86,9 +53,8 @@
       "CustomerRating": 4.9,
       "numberOfPages": 320,
       "weight": 0.7,
-      "addedToChart": true,
-      "price": 60,
-      "newPrice": 4
+      "addedToChart": false,
+      "price": 60
     },
     {
       "Title": "7",
@@ -101,9 +67,8 @@
       "CustomerRating": 4.9,
       "numberOfPages": 320,
       "weight": 0.7,
-      "addedToChart": true,
-      "price": 100,
-      "newPrice": 4
+      "addedToChart": false,
+      "price": 100
     },
     {
       "Title": "8",

@@ -1,5 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
-import { Subscription, first, take } from 'rxjs';
+import { Subscription, catchError, first, retry, take } from 'rxjs';
 import { book } from 'src/app/components/core/data/book.interfaces';
 import { BookService } from 'src/app/components/core/service/book.service';
 import { UserInfoService } from 'src/app/components/core/service/user-info.service';
@@ -22,8 +23,11 @@ export class BooklistComponent implements OnInit{
 
 
   ngOnInit(): void {
-    this.bookService.getBooksList().pipe(first()).subscribe((books) => {
+    this.bookService.getBooksList().pipe(first(),retry(2)
+      ).subscribe((books) => {
       this.bookList = books;
+      console.log("book list", this.bookList);
+
       this.updatePage()
     })
 
@@ -44,9 +48,21 @@ export class BooklistComponent implements OnInit{
 
 
   onAddToChart(book: book, index: number): void {
-    this.bookList[index].addedToChart = true
-    this.bookService.updateAddedToChart(index, true);
-    this.bookService.getChartBook() //////   הוספתי כשי שכשאני מוסיף ספר זה יעדכן את המספר ספרים שמוצד בהאדר בעגלה
+
+    for (let i = 0; i < this.bookList.length; i++) {
+      console.log(+(this.bookList[i].id));
+
+      if (+(this.bookList[i].id) === index) {
+        this.bookList[i].addedToChart = true
+        this.bookService.updateAddedToChart(index, true);
+        this.bookService.getChartBook() //////   הוספתי כשי שכשאני מוסיף ספר זה יעדכן את המספר ספרים שמוצד בהאדר בעגלה
+        return
+      }
+  }
+
+    // this.bookList[index].addedToChart = true
+    // this.bookService.updateAddedToChart(index, true);
+    // this.bookService.getChartBook() //////   הוספתי כשי שכשאני מוסיף ספר זה יעדכן את המספר ספרים שמוצד בהאדר בעגלה
 
   }
 

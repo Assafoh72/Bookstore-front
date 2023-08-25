@@ -36,8 +36,13 @@ hr {
 
 }
 
+.title{
+  display: flex;
+  justify-content: center;
+}
+
 h2 {
-  margin-bottom: 8px;
+  margin: 0;
   font-size: 18px;
   font-weight: bold;
 }

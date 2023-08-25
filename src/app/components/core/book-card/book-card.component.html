@@ -1,10 +1,17 @@
 
+<div class="title">
+  <h2>{{ book.Title }}</h2>
+
+</div>
 <div class="external-container-content-hide">
+
+
   <div (click)="onShowOrHideContent()">
-    <img src="../../../../assets/book sanple.jpg" alt="book.Title">
+    <img [src]="'../../../../assets/' + book.Title + '.jpg'" alt="book.Title">
   </div>
+
   <div [ngClass]="isDisplayNone? 'book-card-content-hide' : 'book-card-content-click' ">
-    <h2>{{ book.Title }}</h2>
+    <!-- <h2>{{ book.Title }}</h2> -->
     <!-- <p>ID: {{ book.id }}</p> -->
     <p>Publisher: {{ book.publisher }}</p>
     <!-- <p>Date Published: {{ book.datePublished }}</p> -->
@@ -14,6 +21,7 @@
     <!-- <p>Customer Rating: {{ book.CustomerRating }}</p> -->
     <!-- <p>Number Of Pages: {{book.numberOfPages}}</p> -->
     <!-- <p>Weight: {{book.weight}}</p> -->
+
     <p>was added to chart: {{book.addedToChart}}</p>
   </div>
 </div>

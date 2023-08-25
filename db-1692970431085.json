@@ -43,7 +43,7 @@
       "price": 164
     },
     {
-      "Title": "To Kill a Mockingbird",
+      "Title": "Moby-Dick",
       "id": 3,
       "category": "Biography",
       "publisher": "Inès",
@@ -141,7 +141,7 @@
       "price": 119
     },
     {
-      "Title": "The Hobbit",
+      "Title": "To Kill a Mockingbird",
       "id": 10,
       "category": "Non-fiction",
       "publisher": "Zhì",
@@ -267,7 +267,7 @@
       "price": 141
     },
     {
-      "Title": "Harry Potter 2",
+      "Title": "Harry Potter and the Sorcerer's Stone",
       "id": 19,
       "category": "Fiction",
       "publisher": "Loïca",
@@ -463,7 +463,7 @@
       "price": 124
     },
     {
-      "Title": "The Hobbit",
+      "Title": "To Kill a Mockingbird",
       "id": 33,
       "category": "Fiction",
       "publisher": "Céline",
@@ -529,7 +529,7 @@
       "CustomerRating": 4,
       "numberOfPages": 500,
       "weight": 1244,
-      "addedToChart": true,
+      "addedToChart": false,
       "price": 128
     },
     {
@@ -543,7 +543,7 @@
       "CustomerRating": 2,
       "numberOfPages": 583,
       "weight": 2846,
-      "addedToChart": true,
+      "addedToChart": false,
       "price": 93
     },
     {
@@ -589,7 +589,7 @@
       "price": 128
     },
     {
-      "Title": "Harry Potter 4",
+      "Title": "Harry Potter and the Sorcerer's Stone",
       "id": 42,
       "category": "Mystery",
       "publisher": "Märta",
@@ -631,7 +631,7 @@
       "price": 114
     },
     {
-      "Title": "Moby-Dick",
+      "Title": "The Great Gatsby",
       "id": 45,
       "category": "Science Fiction",
       "publisher": "Magdalène",

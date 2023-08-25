@@ -29,6 +29,27 @@ a{
  color: black;
 }
 
+.search-container{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding-bottom: 5px;
+  input{
+    border-radius: 10px;
+  }
+
+  button{
+    border-radius: 10px;
+    background: linear-gradient(0deg, rgb(174 176 209) 0%, rgb(110 113 144) 100%);
+    color: #f0f0f0;
+    padding: 4px;
+  }
+
+}
+
 .book-cards-container {
  display: flex;
  flex-wrap: wrap;

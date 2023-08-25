@@ -32,7 +32,8 @@ export class PaymentComponent implements OnInit {
     // const name = this.form.value.name
     // const Credit = this.form.value.email
     // const password = this.form.value.password
-    this.bookService.onRemoveAllCartBooks();
+    // this.bookService.onRemoveAllCartBooks(); ///////////////////////////////////////////////////////////////////
+
     this.modalServise.updateIsModalToDisplay(true);
 
     // this.router.navigate(['/books-list']);
@@ -42,5 +43,5 @@ export class PaymentComponent implements OnInit {
     return !(!form.get(input)?.valid && form.get(input)?.touched)
   }
 
- 
+
 }

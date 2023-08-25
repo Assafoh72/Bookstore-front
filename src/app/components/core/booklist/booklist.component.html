@@ -1,13 +1,13 @@
 <div class="external-container">
   <h1>Books List</h1>
 
-  <div>
-    <p>Serch book</p>
+  <div class="search-container">
+    <p>Search book</p>
     <input type="text" #keyword>
     <button
     routerLink="/serch"
     (click)="onSerchBook(keyword.value)"
-    >Serch</button>
+    >Search</button>
   </div>
 
   <div class="button-container"  *ngIf="isUserAdmin">
@@ -120,7 +120,7 @@
         class="add-to-chart"
         (click)="onAddToChart(book, +book.id)"
         *ngIf="!book.addedToChart && !isUserAdmin"
-         >Add {{book.Title}} to chart
+         >Add {{book.Title}} to cart
         </button>
         </div>
 
