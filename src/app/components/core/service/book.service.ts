@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { book } from '../data/book.interfaces';
-import { BehaviorSubject, Subject, forkJoin } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, forkJoin } from 'rxjs';
 import { BooklistComponent } from '../booklist/booklist.component';
 
 @Injectable({
@@ -9,7 +9,10 @@ import { BooklistComponent } from '../booklist/booklist.component';
 })
 export class BookService {
   private _chartBook = new BehaviorSubject<book[]>([])
-  chartBook = this._chartBook.asObservable()
+  chartBook = this._chartBook.asObservable();
+
+  private _cartBookUser = new BehaviorSubject<book[]>([]);
+  cartBookUser = this._cartBookUser.asObservable()
 
   // private booksList = new BehaviorSubject<book[]>([])
   // _
@@ -45,9 +48,17 @@ export class BookService {
       return true
     }
 
+    updateAddedToCartUser(id: number, status: boolean): boolean {
+      const addres:string = 'http://localhost:3000/books/' + id;
+      this.httpClient.patch(addres, {addedToUserCart: status}).subscribe((el)=>console.log('this os the response', el));
+      return true
+    }
+
     updateBookChart (updatedBooks:book[]){
       this._chartBook.next(updatedBooks)
     }
+
+    
 
     getChartBook() {
       return this.httpClient.get<book[]>('http://localhost:3000/books', {
@@ -58,6 +69,23 @@ export class BookService {
         this._chartBook.next(res)
       });
     }
+
+    updateBookCartUser (updatedBooks:book[]){
+      this._cartBookUser.next(updatedBooks)
+    }
+
+    getCartBookUser() {
+      return this.httpClient.get<book[]>('http://localhost:3000/books', {
+        params: {
+          addedToUserCart: 'true' //////
+        }
+      }).subscribe((res)=>{
+        this._cartBookUser.next(res)
+      });
+    }
+//
+
+//
 
     // getSerchBook() {
     //   return this.httpClient.get<book[]>('http://localhost:3000/books', {
@@ -92,23 +120,23 @@ export class BookService {
     // }
 
 
-    onRemoveAllCartBooks() {
-      console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+    // onRemoveAllCartBooks() {
+    //   console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 
-      // this.httpClient.get<book[]>('http://localhost:3000/books').subscribe((allBooks) => {
-      //   this.allBook = allBooks;
-      // });
-      for(let book of this.allBook){
-        if(this.updateAddedToChart(+book, false)){
-          continue
-        }
-        else{
-        }
-        return
+    //   // this.httpClient.get<book[]>('http://localhost:3000/books').subscribe((allBooks) => {
+    //   //   this.allBook = allBooks;
+    //   // });
+    //   for(let book of this.allBook){
+    //     if(this.updateAddedToChart(+book, false)){
+    //       continue
+    //     }
+    //     else{
+    //     }
+    //     return
 
-      }
+    //   }
 
-    }
+    // }
 
 
 

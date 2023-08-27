@@ -27,7 +27,7 @@
       "numberOfPages": 453,
       "weight": 2374,
       "addedToChart": false,
-      "addedToUserCart": true,
+      "addedToUserCart": false,
       "price": 154
     },
     {
@@ -41,7 +41,7 @@
       "CustomerRating": 7,
       "numberOfPages": 584,
       "weight": 767,
-      "addedToChart": true,
+      "addedToChart": false,
       "addedToUserCart": false,
       "price": 164
     },
@@ -56,7 +56,7 @@
       "CustomerRating": 6,
       "numberOfPages": 514,
       "weight": 2085,
-      "addedToChart": false,
+      "addedToChart": true,
       "addedToUserCart": false,
       "price": 162
     },
@@ -71,7 +71,7 @@
       "CustomerRating": 2,
       "numberOfPages": 514,
       "weight": 1935,
-      "addedToChart": false,
+      "addedToChart": true,
       "addedToUserCart": false,
       "price": 190
     },
@@ -176,7 +176,7 @@
       "CustomerRating": 5,
       "numberOfPages": 351,
       "weight": 1814,
-      "addedToChart": true,
+      "addedToChart": false,
       "addedToUserCart": false,
       "price": 185
     },

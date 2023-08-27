@@ -119,19 +119,30 @@
           <button
         class="add-to-chart"
         (click)="onAddToChart(book, +book.id)"
-        *ngIf="!book.addedToChart && !isUserAdmin"
+        *ngIf="!book.addedToChart && !isUserAdmin && isUserLogedIn"
          >Add {{book.Title}} to cart
         </button>
         </div>
 
         <div class="message-book-was-add"
-        *ngIf="book.addedToChart && !isUserAdmin"
+        *ngIf="book.addedToChart && !isUserAdmin && isUserLogedIn"
          >{{book.Title}} was added to cart
         </div>
-        <!-- <div class="message-book-was-add"
-        *ngIf="book.addedToMyBook"
-         >{{book.Title}} was added to your books
-        </div> -->
+
+        <div class="button-container">
+          <button
+        class="add-to-chart"
+        (click)="onAddToChart(book, +book.id)"
+        *ngIf="!book.addedToUserCart && !isUserAdmin && !isUserLogedIn"
+         >Add {{book.Title}} to cart
+        </button>
+        </div>
+
+        <div class="message-book-was-add"
+        *ngIf="book.addedToUserCart && !isUserAdmin && !isUserLogedIn"
+         >{{book.Title}} was added to cart
+        </div>
+
       </app-book-card>
 
 

@@ -19,6 +19,10 @@ export class HeaderComponent implements OnInit{
   bookChartSub!:Subscription;
   CountBookCart!:number;
   bookList!: book[];
+  countBookCartUser!: number;
+  bookCartUserSubsciption!: Subscription;
+
+
 
   private isUserLogedInSubscription!: Subscription
   private isMyHeroesComponentOpenSubscriotion!: Subscription
@@ -57,6 +61,12 @@ export class HeaderComponent implements OnInit{
 
       this.CountBookCart = val.length
     })
+
+    this.bookCartUserSubsciption = this.bookService.cartBookUser.subscribe((cartBookUser)=>{
+      this.countBookCartUser = cartBookUser.length;
+    })
+
+
 
     this.isUserAdminSubscription = this.userInfoService.isUserAdmin$.subscribe (isUserAdmin=>{
       this.isUserAdmin =isUserAdmin;

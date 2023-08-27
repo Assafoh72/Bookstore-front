@@ -21,6 +21,9 @@ export class BooklistComponent implements OnInit{
   private isUserAdminSubscription!: Subscription;
   public isUserAdmin!: boolean;
 
+  private isUserLogedInSubscription!: Subscription;
+  public isUserLogedIn!: boolean;
+
 
   ngOnInit(): void {
     this.bookService.getBooksList().pipe(first(),retry(2)
@@ -31,6 +34,10 @@ export class BooklistComponent implements OnInit{
       this.updatePage()
     })
 
+
+    this.isUserLogedInSubscription = this.userInfoService.isUserLogedIn$.subscribe (isUserLogedIn=>{
+      this.isUserLogedIn =isUserLogedIn;//////////////////////////////////////////////////////////////////
+    })
 
     this.isUserAdminSubscription = this.userInfoService.isUserAdmin$.subscribe (isUserAdmin=>{
       this.isUserAdmin =isUserAdmin;
@@ -49,16 +56,31 @@ export class BooklistComponent implements OnInit{
 
   onAddToChart(book: book, index: number): void {
 
-    for (let i = 0; i < this.bookList.length; i++) {
-      console.log(+(this.bookList[i].id));
+    if(this.isUserLogedIn){
+      for (let i = 0; i < this.bookList.length; i++) {
+        console.log(+(this.bookList[i].id));
 
-      if (+(this.bookList[i].id) === index) {
-        this.bookList[i].addedToChart = true
-        this.bookService.updateAddedToChart(index, true);
-        this.bookService.getChartBook() //////   הוספתי כשי שכשאני מוסיף ספר זה יעדכן את המספר ספרים שמוצד בהאדר בעגלה
-        return
+        if (+(this.bookList[i].id) === index) {
+          this.bookList[i].addedToChart = true
+          this.bookService.updateAddedToChart(index, true);
+          this.bookService.getChartBook() //////   הוספתי כשי שכשאני מוסיף ספר זה יעדכן את המספר ספרים שמוצד בהאדר בעגלה
+          return
+        }
+    }
+    }
+    if(!this.isUserLogedIn){
+      for (let i = 0; i < this.bookList.length; i++) {
+        console.log(+(this.bookList[i].id));
+
+        if (+(this.bookList[i].id) === index) {
+          this.bookList[i].addedToUserCart = true
+          this.bookService.updateAddedToCartUser(index, true);
+          this.bookService.getCartBookUser() //////   הוספתי כשי שכשאני מוסיף ספר זה יעדכן את המספר ספרים שמוצד בהאדר בעגלה
+          return
+        }
       }
-  }
+    }
+
 
     // this.bookList[index].addedToChart = true
     // this.bookService.updateAddedToChart(index, true);

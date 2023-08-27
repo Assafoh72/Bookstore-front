@@ -8,6 +8,7 @@ import { PaymentComponent } from './components/core/payment/payment.component';
 import { AddBookComponent } from './components/core/add-book/add-book.component';
 import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
 import { SerchComponent } from './components/core/serch/serch.component';
+import { CartUserComponent } from './components/core/cart-user/cart-user.component';
 
 const routes: Routes = [
   {path: 'log-in', component:  LoginComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'payment', component: PaymentComponent},
   {path: 'add-book', component: AddBookComponent},
   {path: 'serch', component: SerchComponent},
+  {path: 'user-cart', component: CartUserComponent},
 
   {path: '', redirectTo: 'log-in', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent, pathMatch: 'full' }

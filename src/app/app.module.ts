@@ -15,6 +15,7 @@ import { ModalComponent } from './components/pages/modal/modal.component';
 import { AddBookComponent } from './components/core/add-book/add-book.component';
 import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
 import { SerchComponent } from './components/core/serch/serch.component';
+import { CartUserComponent } from './components/core/cart-user/cart-user.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SerchComponent } from './components/core/serch/serch.component';
     ModalComponent,
     AddBookComponent,
     PageNotFoundComponent,
-    SerchComponent
+    SerchComponent,
+    CartUserComponent
 
   ],
   imports: [

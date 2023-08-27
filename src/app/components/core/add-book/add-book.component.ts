@@ -94,6 +94,7 @@ export class AddBookComponent implements OnInit {
       numberOfPages: numberOfPages,
       weight: weight,
       addedToChart: false,
+      addedToUserCart: false,
       price: price,
     }
 

@@ -33,7 +33,7 @@ export class PaymentComponent implements OnInit {
     // const Credit = this.form.value.email
     // const password = this.form.value.password
     // this.bookService.onRemoveAllCartBooks(); ///////////////////////////////////////////////////////////////////
-
+    // this.bookService.updateBooks()
     this.modalServise.updateIsModalToDisplay(true);
 
     // this.router.navigate(['/books-list']);

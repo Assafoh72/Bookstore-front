@@ -1,0 +1,45 @@
+<div class="external-container">
+  <h1>Your Chart</h1>
+  <p *ngIf="this.isUserLogedIn">user is loged in</p>
+  <div class="book-cards-container">
+    <div class="book-card" *ngFor="let book of displayedBooks ; let i=index">
+
+
+
+      <app-book-card [book]="book">
+
+        <div class="button-container">
+          <button
+        class="add-to-chart"
+        (click)="onRemovefromChart(+book.id, i)"
+        *ngIf="book.addedToUserCart"
+         >Remove {{book.Title}} from cart
+        </button>
+        </div>
+      </app-book-card>
+
+
+    </div>
+  </div>
+  <div class="pagination">
+    <button class="btn-1" (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+    <div>{{currentPage}} \ {{totalPages}}</div>
+    <button class="btn-1" (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+
+  <div class="price-container">
+    <p>Price: {{this.totalPrice}} </p>
+    <p class="red">Discount: {{this.discount}} </p>
+    <p>Price after discount:  {{this.priceAfterDiscount}} </p>
+  </div>
+
+  <div *ngIf="true" class="external-button-container">
+    <button routerLink="/payment" class="custom-btn btn-1">
+      <span class="button-content">
+        Payment</span>
+      </button>
+  </div>
+
+</div>
+
+

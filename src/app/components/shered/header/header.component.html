@@ -14,12 +14,22 @@
   </div> -->
 
     <!-- <div *ngIf="isUserLogedIn && !isMyHeroesComponentOpen" class="external-button-container"> -->
-      <div *ngIf="!isUserAdmin" class="external-button-container">
+      <div *ngIf="!isUserAdmin && isUserLogedIn" class="external-button-container">
 
       <button (click)="this.isMyHeroesComponentOpen=true" routerLink="/chart" class="custom-btn btn-1">
         <span class="button-content">
           <img class="cart-img" src="../../../../assets/cart.png" alt="">
           {{CountBookCart}}
+        </span>
+          </button>
+    </div>
+
+    <div *ngIf="!isUserAdmin && !isUserLogedIn" class="external-button-container">
+
+      <button (click)="this.isMyHeroesComponentOpen=true" routerLink="/user-cart" class="custom-btn btn-1">
+        <span class="button-content">
+          <img class="cart-img" src="../../../../assets/cart.png" alt="">
+          {{countBookCartUser}}
         </span>
           </button>
     </div>
