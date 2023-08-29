@@ -31,14 +31,11 @@ export class BookService {
   }
 
 
-
-
   constructor(private httpClient: HttpClient) { }
 
 
 
     getBooksList() {
-      console.log("in function getBooksList()");
       return this.httpClient.get<book[]>('http://localhost:3000/books')
     }
 
@@ -58,7 +55,7 @@ export class BookService {
       this._chartBook.next(updatedBooks)
     }
 
-    
+
 
     getChartBook() {
       return this.httpClient.get<book[]>('http://localhost:3000/books', {

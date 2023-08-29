@@ -52,6 +52,8 @@ export class ChartComponent implements OnInit{
     bookChartSub!:Subscription
     displayedBooks: book[] = [];
 
+    
+
     countBookCart = this.bookChart.length
 
 
