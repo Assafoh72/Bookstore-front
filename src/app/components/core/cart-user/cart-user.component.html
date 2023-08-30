@@ -1,5 +1,21 @@
 <div class="external-container">
-  <h1>Your Chart</h1>
+
+  <h1>Your Chart guest</h1>
+
+   <div class="modal-overlay" *ngIf="isModalCartDisplay">
+      <div class="modal">
+        <h2>Purchase Confirmation guest</h2>
+        <p>The books will be sent to you within two days. <br>
+        Thank you for purchasing from our site.
+        <br> We hope to see you soon on our website </p>
+        <div class="modal-button-container">
+          <button class="modal-btn confirm-btn" (click)="onDeleteAllCartBock()">Confirm</button>
+        </div>
+      </div>
+    </div>
+
+
+
   <p *ngIf="this.isUserLogedIn">user is loged in</p>
   <div class="book-cards-container">
     <div class="book-card" *ngFor="let book of displayedBooks ; let i=index">
@@ -11,7 +27,7 @@
         <div class="button-container">
           <button
         class="add-to-chart"
-        (click)="onRemovefromChart(+book.id, i)"
+        (click)="onRemovefromChart(+book.id)"
         *ngIf="book.addedToUserCart"
          >Remove {{book.Title}} from cart
         </button>

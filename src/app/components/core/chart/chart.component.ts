@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription, first, take } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription, first, take } from 'rxjs';
 import { book } from 'src/app/components/core/data/book.interfaces';
 import { BookService } from 'src/app/components/core/service/book.service';
 import { UserInfoService } from 'src/app/components/core/service/user-info.service';
@@ -40,9 +40,17 @@ export class ChartComponent implements OnInit{
       // this.calculateTotalPriceAfterDiscount()
 
 
+      this.isModalCartDisplaySubscription = this.bookService.isModalOnDisplay$.subscribe(isDisplay =>{
+        this.isModalCartDisplay = isDisplay
+      })
+
+
 
     }
     // private ChartBoSubscription!: Subscription;
+
+    public isModalCartDisplay!: boolean;
+    private isModalCartDisplaySubscription!: Subscription;
 
     private isUserLogedInSubscription!: Subscription;
     public isUserLogedIn!: boolean;
@@ -52,7 +60,18 @@ export class ChartComponent implements OnInit{
     bookChartSub!:Subscription
     displayedBooks: book[] = [];
 
-    
+    // private isModalOnDisplay: boolean = false;
+    // private isModalOnDisplaySubject = new BehaviorSubject<boolean>(false)
+    // isModalOnDisplay$: Observable<boolean> = this.isModalOnDisplaySubject.asObservable();
+
+    // getIsModalOnDisplay(){
+    //   return this.isModalOnDisplay;
+    // }
+    // updateIsModalOnDisplay(isDisplay: boolean){
+    //   this.isModalOnDisplaySubject.next(isDisplay)
+    // }
+
+
 
     countBookCart = this.bookChart.length
 
@@ -66,7 +85,21 @@ export class ChartComponent implements OnInit{
   currentPage: number = 1
   totalPages: number = Math.max((Math.ceil(this.bookChart.length/6)),1);
 
-  onRemovefromChart(index: number, indexInBookChart: number){
+  // onRemovefromChart(index: number, indexInBookChart: number){
+  //   this.bookService.updateAddedToChart(index,false)
+
+  //   const bookWithSpecificId = this.bookChart.find(book => book.id === String(index));
+  //   if (bookWithSpecificId) {
+  //     bookWithSpecificId.addedToChart = false;
+  //   }
+  // this.bookService.updateBookChart(this.bookChart);
+  // this.bookService.getChartBook()
+  // this.updatePage()
+  // }
+
+  onRemovefromChart(index: number){
+    console.log("in onRemovefromChart()");
+
     this.bookService.updateAddedToChart(index,false)
 
     const bookWithSpecificId = this.bookChart.find(book => book.id === String(index));
@@ -97,6 +130,16 @@ export class ChartComponent implements OnInit{
   }
   //pegination
 
+  onDeleteAllCartBock(){
+    for(let book of this.bookChart){
+      if (book.addedToChart){
+        console.log(book);
+        this.onRemovefromChart(+book.id)
+      }
+    }
+    this.bookService.updateIsModalOnDisplay(false);
+  }
+
   calculateTotalPrice(){
     for(let book of this.bookChart){
       this.totalPrice += +book.price
@@ -115,8 +158,14 @@ export class ChartComponent implements OnInit{
     }
    }
 
+
+
+
+
   ngOnDestroy(){
     this.isUserLogedInSubscription.unsubscribe();
+    this.isModalCartDisplaySubscription.unsubscribe();
+
   }
 }
 

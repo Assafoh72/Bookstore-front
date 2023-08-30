@@ -36,13 +36,24 @@ export class CartUserComponent implements OnInit {
       })
 
 
+      this.isModalCartDisplaySubscription = this.bookService.isModalOnDisplay$.subscribe(isDisplay =>{
+        this.isModalCartDisplay = isDisplay
+      })
+
+
+
 
 
     }
     // private ChartBoSubscription!: Subscription;
 
+    public isModalCartDisplay!: boolean;
+    private isModalCartDisplaySubscription!: Subscription;
+
+
     private isUserLogedInSubscription!: Subscription;
     public isUserLogedIn!: boolean;
+
 
 
     bookChart: book[] = [];
@@ -61,7 +72,7 @@ export class CartUserComponent implements OnInit {
   currentPage: number = 1
   totalPages: number = Math.max((Math.ceil(this.bookChart.length/6)),1);
 
-  onRemovefromChart(index: number, indexInBookChart: number){
+  onRemovefromChart(index: number){
     this.bookService.updateAddedToCartUser(index,false)
 
     const bookWithSpecificId = this.bookChart.find(book => book.id === String(index));
@@ -91,6 +102,17 @@ export class CartUserComponent implements OnInit {
     this.updatePage();
   }
 
+  onDeleteAllCartBock(){
+    for(let book of this.bookChart){
+      if (book.addedToUserCart){
+        console.log(book);
+        this.onRemovefromChart(+book.id)
+      }
+    }
+    this.bookService.updateIsModalOnDisplay(false);
+  }
+
+
   calculateTotalPrice(){
     for(let book of this.bookChart){
       this.totalPrice += +book.price
@@ -111,5 +133,7 @@ export class CartUserComponent implements OnInit {
 
   ngOnDestroy(){
     this.isUserLogedInSubscription.unsubscribe();
+    this.isModalCartDisplaySubscription.unsubscribe();
+
   }
 }

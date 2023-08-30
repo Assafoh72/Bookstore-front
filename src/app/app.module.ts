@@ -16,6 +16,7 @@ import { AddBookComponent } from './components/core/add-book/add-book.component'
 import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
 import { SerchComponent } from './components/core/serch/serch.component';
 import { CartUserComponent } from './components/core/cart-user/cart-user.component';
+import { SearchUserComponent } from './components/core/search-user/search-user.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CartUserComponent } from './components/core/cart-user/cart-user.compone
     AddBookComponent,
     PageNotFoundComponent,
     SerchComponent,
-    CartUserComponent
+    CartUserComponent,
+    SearchUserComponent
 
   ],
   imports: [

@@ -104,17 +104,13 @@ export class BookService {
     // }
 
     // onRemoveAllCartBooks() {
-    //   this.httpClient.get<book[]>('http://localhost:3000/books').subscribe((allBooks) => {
-    //     for (let book of allBooks) {
-    //       if (book.addedToChart === true) {
-    //         const address: string = 'http://localhost:3000/books/' + book.id;
-    //         this.httpClient.patch(address, { addedToChart: false }).subscribe((response) => {
-    //           console.log('Response from addedToChart update:', response);
-    //         });
-    //       }
+    //   for(let book of ){
+    //     if (book.addedToChart === true){
+
     //     }
-    //   });
+    //   }
     // }
+
 
 
     // onRemoveAllCartBooks() {
@@ -202,6 +198,28 @@ export class BookService {
     const addres:string = 'http://localhost:3000/books/' + id;
     this.httpClient.patch(addres, {Title: newTitle}).subscribe((el)=>console.log('this os the response', el));
   }
+
+
+
+
+
+
+
+
+
+
+
+
+  private isModalOnDisplay: boolean = false;
+    private isModalOnDisplaySubject = new BehaviorSubject<boolean>(false)
+    isModalOnDisplay$: Observable<boolean> = this.isModalOnDisplaySubject.asObservable();
+
+    getIsModalOnDisplay(){
+      return this.isModalOnDisplay;
+    }
+    updateIsModalOnDisplay(isDisplay: boolean){
+      this.isModalOnDisplaySubject.next(isDisplay)
+    }
 
 
 

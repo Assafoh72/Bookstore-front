@@ -41,8 +41,17 @@ export class SerchComponent implements OnInit {
    userName = this.userInfoService.getUserInfo()?.name;
 
 
-  onAddToChart(book: book, index: number): void {
-    this.bookList[index].addedToChart = true
+  // onAddToChart(book: book, index: number): void {
+  //   this.bookList[index].addedToChart = true
+  //   this.bookService.updateAddedToChart(index, true);
+  //   this.bookService.getChartBook() //////   הוספתי כשי שכשאני מוסיף ספר זה יעדכן את המספר ספרים שמוצד בהאדר בעגלה
+
+  // }
+
+  onAddToChart(indexInArry: number, index: number): void {
+    console.log("index: " ,index);
+
+    this.bookList[indexInArry].addedToChart = true
     this.bookService.updateAddedToChart(index, true);
     this.bookService.getChartBook() //////   הוספתי כשי שכשאני מוסיף ספר זה יעדכן את המספר ספרים שמוצד בהאדר בעגלה
 

@@ -1,11 +1,10 @@
 <div *ngIf="getIsModalToDisplay()" class="external-container">
   <div class="modal-container">
     <div class="modal-content">
-The books will be sent to you within two days. <br>
-Thank you for purchasing from our site
+      Payment done successfully
     </div>
     <div class="modal-button">
-      <button (click)="updateIsModalToDisplay(false)" routerLink="/chart">
+      <button (click)="onSubmit()" >
         ok
       </button>
     </div>

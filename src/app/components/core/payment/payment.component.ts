@@ -34,9 +34,10 @@ export class PaymentComponent implements OnInit {
     // const password = this.form.value.password
     // this.bookService.onRemoveAllCartBooks(); ///////////////////////////////////////////////////////////////////
     // this.bookService.updateBooks()
+
     this.modalServise.updateIsModalToDisplay(true);
 
-    // this.router.navigate(['/books-list']);
+    // this.router.navigate(['/chart']);
   }
 
   isInputValid(form:FormGroup, input: string): boolean{
