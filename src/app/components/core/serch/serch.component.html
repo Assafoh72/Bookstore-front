@@ -1,5 +1,5 @@
 <div class="external-container">
-  <h1>Resalt search for {{this.keyword}}</h1>
+  <h1>Resalt search for: {{this.keyword}}</h1>
 
 
 
@@ -10,19 +10,32 @@
     <div class="book-card" *ngFor="let book of displayedBooks ; let i=index">
       <app-book-card [book]="book">
 
-
-        <div class="button-container">
+        <div class="button-container" *ngIf="isUserLogedIn">
           <button
         class="add-to-chart"
-        (click)="onAddToChart(i, +book.id)"
+        (click)="onAddToChart(i+(i*(currentPage-1)), +book.id)"
         *ngIf="!book.addedToChart && !isUserAdmin"
-         >Add {{book.Title}} to chart
+         >Add {{book.Title}} to user chart
+        </button>
+        </div>
+
+        <div class="button-container" *ngIf="!isUserLogedIn">
+          <button
+        class="add-to-chart"
+        (click)="onAddToUserChart(+book.id)"
+        *ngIf="!book.addedToUserCart && !isUserAdmin"
+         >Add {{book.Title}} to guest chart
         </button>
         </div>
 
         <div class="message-book-was-add"
-        *ngIf="book.addedToChart && !isUserAdmin"
-         >{{book.Title}} was added to cart
+        *ngIf="book.addedToChart && !isUserAdmin && isUserLogedIn"
+         >{{book.Title}} was added to user cart
+        </div>
+
+        <div class="message-book-was-add"
+        *ngIf="book.addedToUserCart && !isUserAdmin && !isUserLogedIn"
+         >{{book.Title}} was added to guest cart
         </div>
 
       </app-book-card>

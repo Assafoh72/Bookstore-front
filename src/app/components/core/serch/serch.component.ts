@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../service/book.service';
 import { UserInfoService } from '../service/user-info.service';
-import { first } from 'rxjs';
+import { Subscription, first } from 'rxjs';
 import { book } from '../data/book.interfaces';
 
 @Component({
@@ -28,11 +28,22 @@ export class SerchComponent implements OnInit {
       this.updatePage()
     })
 
+    this.isUserLogedInSubscription = this.userInfoService.isUserLogedIn$.subscribe( isUserlogedIn =>{
+      this.isUserLogedIn = isUserlogedIn;
+    })
+
+
+
 
 
   }
 
   displayedBooks: book[] = [];
+
+  public isUserLogedIn!: boolean;
+  private isUserLogedInSubscription!: Subscription;
+
+
 
 
   discount: number = 0;
@@ -50,11 +61,28 @@ export class SerchComponent implements OnInit {
 
   onAddToChart(indexInArry: number, index: number): void {
     console.log("index: " ,index);
-
-    this.bookList[indexInArry].addedToChart = true
+    // this.bookList[indexInArry].addedToChart = true
+    for(let book of this.bookList){
+      if(+book.id === index ){
+        book.addedToChart = true;
+        break;
+      }
+    }
     this.bookService.updateAddedToChart(index, true);
     this.bookService.getChartBook() //////   הוספתי כשי שכשאני מוסיף ספר זה יעדכן את המספר ספרים שמוצד בהאדר בעגלה
+  }
 
+  onAddToUserChart(index: number): void {
+    console.log("index: " ,index);
+    // this.bookList[indexInArry].addedToChart = true
+    for(let book of this.bookList){
+      if(+book.id === index ){
+        book.addedToUserCart = true;
+        break;
+      }
+    }
+    this.bookService.updateAddedToCartUser(index, true);
+    this.bookService.getCartBookUser() //////   הוספתי כשי שכשאני מוסיף ספר זה יעדכן את המספר ספרים שמוצד בהאדר בעגלה
   }
 
 
@@ -141,6 +169,10 @@ filterBooksByTitleKeyword(keyword: string){
     }
   }
   this.bookList = filteredBooks;
+}
+
+ngOnDestroy(){
+  this.isUserLogedInSubscription.unsubscribe();
 }
 
 
