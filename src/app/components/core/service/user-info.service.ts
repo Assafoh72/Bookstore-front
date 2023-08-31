@@ -53,7 +53,8 @@ export class UserInfoService {
   }
 
   getIsUserLogedIn() {
-    return this.isUserLogedIn
+    // return this.isUserLogedIn
+    return this.isUserLogedInSubject.getValue()
   }
 
   updateIsUserAdmin(isUserAdmin:boolean){
@@ -61,7 +62,8 @@ export class UserInfoService {
   }
 
   getIsUserAdmin() {
-    return this.isUserAdmin
+    // return this.isUserAdmin
+    return this.isuserAdminSubject.getValue()
   }
 
   updateIsUserLogedInGuard(isUserLogedIn:boolean){

@@ -9,14 +9,16 @@ import { AddBookComponent } from './components/core/add-book/add-book.component'
 import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
 import { SerchComponent } from './components/core/serch/serch.component';
 import { CartUserComponent } from './components/core/cart-user/cart-user.component';
+import { GuardsGuard } from './components/core/service/guard.guard';
+import { GuardAdmin } from './components/core/service/guardAdmin.guard';
 
 const routes: Routes = [
   {path: 'log-in', component:  LoginComponent},
   {path: 'sign-up', component: SignUpComponent},
   {path: 'books-list', component: BooklistComponent},
-  {path: 'chart', component: ChartComponent},
+  {path: 'chart', component: ChartComponent, canActivate: [GuardsGuard]},
   {path: 'payment', component: PaymentComponent},
-  {path: 'add-book', component: AddBookComponent},
+  {path: 'add-book', component: AddBookComponent, canActivate: [GuardAdmin]},
   {path: 'serch', component: SerchComponent},
   {path: 'user-cart', component: CartUserComponent},
 

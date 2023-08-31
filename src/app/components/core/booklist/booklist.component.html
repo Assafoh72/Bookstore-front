@@ -10,33 +10,33 @@
     >Search</button>
   </div>
 
-  <div class="button-container"  *ngIf="isUserAdmin">
+  <div class="discount-container-external"  *ngIf="isUserAdmin">
     <div class="discount-container">
       <p>Set discount: {{this.discount*100}}%</p>
 
       <button
-    class="add-to-chart"
+    class="discount-button"
     *ngIf="isUserAdmin"
     (click)="setDiscount(0.05)"
      >5%
     </button>
 
     <button
-    class="add-to-chart"
+    class="discount-button"
     *ngIf="isUserAdmin"
     (click)="setDiscount(0.1)"
      >10%
     </button>
 
     <button
-    class="add-to-chart"
+    class="discount-button"
     *ngIf="isUserAdmin"
     (click)="setDiscount(0.15)"
      >15%
     </button>
 
     <button
-    class="add-to-chart"
+    class="discount-button"
     *ngIf="isUserAdmin"
     (click)="setDiscount(0.2)"
      >20%
@@ -57,31 +57,49 @@
   <div class="book-cards-container">
 
 
-    <!-- <div class="button-container">
-      <p>Set discount</p>
-      <div class="discount-container">
-        <button
-      class="add-to-chart"
-      *ngIf="isUserAdmin"
-      routerLink="/add-book"
-       >Add new book
-      </button>
-      </div>
-
-
-
-      <button
-    class="add-to-chart"
-    *ngIf="isUserAdmin"
-    routerLink="/add-book"
-     >Add new book
-    </button>
-    </div> -->
-
     <div class="book-card" *ngFor="let book of displayedBooks ; let i=index">
       <app-book-card [book]="book">
 
+
+
+        <div class="admin-container">
+
+          <div *ngIf="isUserAdmin" class="button-container">
+            <button
+          class="add-to-chart"
+          *ngIf="isUserAdmin"
+          (click)="onUpdatePrice(+book.id,+priceInput.value)"
+           >Update {{book.Title}} price
+          </button>
+          <input  class="input-price" type="number" #priceInput>
+        </div>
+
         <div *ngIf="isUserAdmin" class="button-container">
+
+          <button
+          class="add-to-chart"
+          *ngIf="isUserAdmin"
+          (click)="onUpdateTitle(+book.id,titleInput.value)"
+           >Update {{book.Title}} title
+          </button>
+          <input  class="input-price" type="text" #titleInput>
+        </div>
+
+
+
+          <div class="button-container">
+            <button
+          class="add-to-chart"
+          *ngIf="isUserAdmin"
+          (click)="onDeleteBook(+book.id)"
+           >Delete {{book.Title}}
+          </button>
+          </div>
+
+
+        </div>
+
+        <!-- <div *ngIf="isUserAdmin" class="button-container">
           <button
         class="add-to-chart"
         *ngIf="isUserAdmin"
@@ -111,7 +129,7 @@
         (click)="onDeleteBook(+book.id)"
          >Delete {{book.Title}}
         </button>
-        </div>
+        </div> -->
 
 
 

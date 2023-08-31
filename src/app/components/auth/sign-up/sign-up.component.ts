@@ -32,8 +32,11 @@ export class SignUpComponent implements OnInit {
     const password = this.form.value.password
     this.userInfoService.storeUserInfo (email, password, name)
     this.userInfoService.updateIsUserLogedIn(true);
+    console.log(this.userInfoService.getIsUserLogedIn());
+
     this.userInfoService.updateIsUserLogedInGuard(true)
     this.router.navigate(['/books-list']);
+
   }
 
   isInputValid(form:FormGroup, input: string): boolean{
